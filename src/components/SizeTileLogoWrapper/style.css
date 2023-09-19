@@ -1,0 +1,106 @@
+.size-tile-logo-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 496px;
+}
+
+.size-tile-logo-wrapper .container-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: var(--responsive-tokens-spacer-xs);
+  position: relative;
+  width: 100%;
+}
+
+.size-tile-logo-wrapper .provider-logo-5 {
+  height: 64px;
+  position: relative;
+  width: 338px;
+}
+
+.size-tile-logo-wrapper .marquee-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.size-tile-logo-wrapper .fade-3 {
+  height: 79px;
+  left: -12180px;
+  object-fit: cover;
+  position: absolute;
+  top: -224px;
+  width: 448px;
+}
+
+.size-tile-logo-wrapper .title-3 {
+  align-self: stretch;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.size-tile-logo-wrapper .description-3 {
+  align-self: stretch;
+  flex: 0 0 auto;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}
+
+.size-tile-logo-wrapper .frame-2 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  position: relative;
+  width: 100%;
+}
+
+.size-tile-logo-wrapper .marquee-4 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.size-tile-logo-wrapper .fade-4 {
+  height: 79px;
+  left: -12180px;
+  object-fit: cover;
+  position: absolute;
+  top: -364px;
+  width: 264px;
+}
+
+.size-tile-logo-wrapper .provider-logo-6 {
+  align-self: stretch;
+  position: relative;
+  width: 180px;
+}
+
+.size-tile-logo-wrapper .progress-bar-brand-instance {
+  border-radius: unset !important;
+}
+
+.size-tile-logo-wrapper.logo-position-right {
+  gap: var(--responsive-tokens-spacer-sm);
+  padding: 0px var(--responsive-tokens-spacer-lg) var(--responsive-tokens-spacer-lg) var(--responsive-tokens-spacer-lg);
+}
+
+.size-tile-logo-wrapper.logo-position-top {
+  gap: 8px;
+  padding: 0px 24px 16px;
+}

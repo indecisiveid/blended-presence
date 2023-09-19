@@ -1,0 +1,43 @@
+.badge-base {
+  align-items: center;
+  background-color: var(--color-tokens-color-fill-inversesecondary);
+  border: 1px solid;
+  border-color: var(--color-tokens-color-stroke-neutralsecondary);
+  border-radius: 4px;
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+  padding: 4px 8px;
+  position: relative;
+}
+
+.badge-base .class {
+  gap: unset !important;
+  height: var(--responsive-tokens-spacer-xl) !important;
+  padding: 2px !important;
+  width: var(--responsive-tokens-spacer-xl) !important;
+}
+
+.badge-base .class-2 {
+  gap: unset !important;
+  height: 24px !important;
+  padding: 2px !important;
+  width: 24px !important;
+}
+
+.badge-base .icon {
+  border-radius: 10px !important;
+}
+
+.badge-base .title {
+  color: var(--color-tokens-color-text-neutral);
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}

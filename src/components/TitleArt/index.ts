@@ -1,0 +1,1 @@
+export { TitleArt } from "./TitleArt";

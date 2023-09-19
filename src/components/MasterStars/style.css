@@ -1,0 +1,56 @@
+.master-stars {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px 0px;
+  position: relative;
+}
+
+.master-stars .overlap-wrapper {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.master-stars .overlap-3 {
+  height: 24px;
+  position: relative;
+}
+
+.master-stars .star-instance {
+  height: 24px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 24px !important;
+}
+
+.master-stars .star-4 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/shadow-21@2x.png) !important;
+}
+
+.master-stars .star-5 {
+  height: 24px !important;
+  top: 2px !important;
+  width: 24px !important;
+}
+
+.master-stars .half-star-2 {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
+
+.master-stars .star-6 {
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.master-stars .star-7 {
+  height: 26px !important;
+  margin-bottom: -2px !important;
+  position: relative !important;
+  width: 25px !important;
+}

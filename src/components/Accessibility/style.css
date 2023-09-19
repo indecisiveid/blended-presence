@@ -1,0 +1,28 @@
+.accessibility {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 10px;
+  position: relative;
+}
+
+.accessibility .badge-3 {
+  color: var(--glasssystemsystem-white-100);
+  font-family: "Sky Text-Medium", Helvetica;
+  font-size: 32px;
+  font-weight: 500;
+  height: 36px;
+  letter-spacing: 0;
+  line-height: 36px;
+  margin-top: -1px;
+  position: relative;
+  text-shadow: 1px 2px 0px #000000cc;
+  white-space: nowrap;
+}
+
+.accessibility .audio-description {
+  width: 43px;
+}
+
+.accessibility .subtitles {
+  width: 31px;
+}

@@ -1,0 +1,85 @@
+.standard-header {
+  display: flex;
+  gap: 24px;
+  padding: 48px 152px 4px;
+  position: relative;
+  width: 1920px;
+}
+
+.standard-header .element-slot {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.standard-header .row {
+  align-items: flex-start;
+  gap: 24px;
+  height: 73px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.standard-header .element-logo-size {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  height: 73px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 34px;
+  position: relative;
+}
+
+.standard-header .elements-elements-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  margin-bottom: -40px;
+  margin-top: -86px;
+  padding: 46px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.standard-header .class-10 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/footprint-5@2x.png) !important;
+}
+
+.standard-header .class-11 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/footprint-7@2x.png) !important;
+}
+
+.standard-header.new {
+  align-items: flex-end;
+}
+
+.standard-header.inactive {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.standard-header.active {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.standard-header.new .row {
+  display: inline-flex;
+}
+
+.standard-header.inactive .row {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+}
+
+.standard-header.active .row {
+  display: inline-flex;
+}

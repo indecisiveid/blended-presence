@@ -1,0 +1,90 @@
+.master-focus {
+  height: 268px;
+  position: relative;
+  width: 268px;
+}
+
+.master-focus .overlap-group-3 {
+  height: 268px;
+}
+
+.master-focus .meta-tiles-instance {
+  font-family: var(--titles-title-tile-lrg-font-family) !important;
+  font-size: var(--titles-title-tile-lrg-font-size) !important;
+  font-style: var(--titles-title-tile-lrg-font-style) !important;
+  font-weight: var(--titles-title-tile-lrg-font-weight) !important;
+  letter-spacing: var(--titles-title-tile-lrg-letter-spacing) !important;
+  line-height: var(--titles-title-tile-lrg-line-height) !important;
+}
+
+.master-focus .meta-tiles-2 {
+  left: 0 !important;
+  position: absolute !important;
+  top: 138px !important;
+}
+
+.master-focus .class-12 {
+  border-radius: 8px !important;
+  top: 138px !important;
+}
+
+.master-focus .highlight {
+  height: 268px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 268px;
+}
+
+.master-focus .token-highlight {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-15@2x.png);
+  background-size: 100% 100%;
+  height: 268px;
+}
+
+.master-focus .flare-position-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 33px;
+  position: relative;
+  width: 138px;
+}
+
+.master-focus .k-flare-wrapper {
+  height: 33px;
+  margin-right: -14px;
+  position: relative;
+  width: 152px;
+}
+
+.master-focus .k-flare-2 {
+  height: 64px;
+  left: -29px;
+  position: absolute;
+  top: -31px;
+  width: 154px;
+}
+
+.master-focus .focus-focused {
+  position: relative;
+}
+
+.master-focus .focus-expanded {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/1-1-image-16@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.master-focus .focus-unfocused {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/1-1-image-18@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+.master-focus .titled-true.focus-unfocused {
+  position: relative;
+}

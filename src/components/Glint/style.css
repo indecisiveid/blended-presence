@@ -1,0 +1,23 @@
+.glint {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 33px;
+  position: relative;
+  width: 138px;
+}
+
+.glint .flare-position {
+  height: 33px;
+  position: relative;
+  width: 138px;
+}
+
+.glint .k-flare {
+  height: 78px;
+  left: -29px;
+  position: absolute;
+  top: -38px;
+  width: 154px;
+}

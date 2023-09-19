@@ -1,0 +1,1 @@
+export { HeroMetadata } from "./HeroMetadata";

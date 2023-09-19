@@ -1,0 +1,49 @@
+.master-button-focus {
+  height: 80px;
+  position: relative;
+  width: 341px;
+}
+
+.master-button-focus .overlap-group-5 {
+  height: 80px;
+  position: relative;
+}
+
+.master-button-focus .highlight-2 {
+  height: 80px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 341px;
+}
+
+.master-button-focus .token-highlight-2 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-5@2x.png);
+  background-size: 100% 100%;
+  height: 80px;
+}
+
+.master-button-focus .glint-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 33px;
+  position: relative;
+  width: 138px;
+}
+
+.master-button-focus .flare-position-2 {
+  height: 33px;
+  margin-right: -14px;
+  position: relative;
+  width: 152px;
+}
+
+.master-button-focus .k-flare-4 {
+  height: 64px;
+  left: -29px;
+  position: absolute;
+  top: -31px;
+  width: 154px;
+}

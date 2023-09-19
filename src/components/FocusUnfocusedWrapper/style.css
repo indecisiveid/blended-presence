@@ -1,0 +1,74 @@
+.focus-unfocused-wrapper {
+  height: 664px;
+  position: relative;
+  width: 1728px;
+}
+
+.focus-unfocused-wrapper .overlap-2 {
+  height: 664px;
+  position: relative;
+}
+
+.focus-unfocused-wrapper .master-billboard-tile {
+  align-self: stretch !important;
+  left: unset !important;
+  position: relative !important;
+  top: unset !important;
+  width: 100% !important;
+}
+
+.focus-unfocused-wrapper .elements-dimmer-instance {
+  border-radius: unset !important;
+  height: 664px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 1728px !important;
+}
+
+.focus-unfocused-wrapper .token-highlight-wrapper {
+  height: 664px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1728px;
+}
+
+.focus-unfocused-wrapper .glint-wrapper {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke.png);
+  background-size: 100% 100%;
+  height: 664px;
+}
+
+.focus-unfocused-wrapper .glint-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 33px;
+  position: relative;
+  width: 138px;
+}
+
+.focus-unfocused-wrapper .img-wrapper {
+  height: 33px;
+  margin-right: -14px;
+  position: relative;
+  width: 152px;
+}
+
+.focus-unfocused-wrapper .k-flare-3 {
+  height: 64px;
+  left: -29px;
+  position: absolute;
+  top: -31px;
+  width: 154px;
+}
+
+.focus-unfocused-wrapper .my-list-8 {
+  height: 30px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 4px !important;
+  width: 29px !important;
+}

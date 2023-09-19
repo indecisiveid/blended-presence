@@ -1,0 +1,36 @@
+.tile-standard {
+  height: 195px;
+  position: relative;
+  width: 195px;
+}
+
+.tile-standard .class-13 {
+  background-color: var(--glassbasebase-focused-panel) !important;
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/1-1-image-20@2x.png) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--base-shadow-focused-panel) !important;
+  height: 243px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 243px !important;
+}
+
+.tile-standard .class-14 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-16@2x.png) !important;
+  height: 243px !important;
+}
+
+.tile-standard .class-15 {
+  background-color: var(--glassbasebase-expanded) !important;
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/1-1-image-19@2x.png) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--base-shadow-expanded) !important;
+  height: 227px !important;
+  width: unset !important;
+}
+
+.tile-standard .class-16 {
+  height: 243px !important;
+  width: 243px !important;
+}

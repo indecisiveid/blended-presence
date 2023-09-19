@@ -1,0 +1,44 @@
+.button-rail {
+  position: relative;
+}
+
+.button-rail .group {
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+}
+
+.button-rail .button-instance {
+  margin-right: -219px !important;
+}
+
+.button-rail .class-63 {
+  margin-right: -365px !important;
+}
+
+.button-rail .button-2 {
+  width: 122px !important;
+}
+
+.button-rail.scrolled-false {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-rail.scrolled-true {
+  height: 80px;
+  width: 851px;
+}
+
+.button-rail.scrolled-false .group {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.button-rail.scrolled-true .group {
+  display: flex;
+  left: -365px;
+  width: 852px;
+}

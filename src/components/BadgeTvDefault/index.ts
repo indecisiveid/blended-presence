@@ -1,0 +1,1 @@
+export { BadgeTvDefault } from "./BadgeTvDefault";

@@ -1,0 +1,9 @@
+.video-quality {
+  align-items: flex-start;
+  display: inline-flex;
+  position: relative;
+}
+
+.video-quality .master-badge-2 {
+  flex: 0 0 auto !important;
+}

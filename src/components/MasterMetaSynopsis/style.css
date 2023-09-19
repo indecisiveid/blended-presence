@@ -1,0 +1,71 @@
+.master-meta-synopsis {
+  align-items: center;
+  display: inline-flex;
+  gap: 24px;
+  height: 36px;
+  position: relative;
+}
+
+.master-meta-synopsis .signposts {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+}
+
+.master-meta-synopsis .master-signpost-instance {
+  position: relative !important;
+}
+
+.master-meta-synopsis .star-rating-instance {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/shadow-21@2x.png) !important;
+}
+
+.master-meta-synopsis .text-wrapper-2 {
+  color: var(--glasssystemsystem-white-100);
+  font-family: var(--subline-subline-strong-font-family);
+  font-size: var(--subline-subline-strong-font-size);
+  font-style: var(--subline-subline-strong-font-style);
+  font-weight: var(--subline-subline-strong-font-weight);
+  letter-spacing: var(--subline-subline-strong-letter-spacing);
+  line-height: var(--subline-subline-strong-line-height);
+  position: relative;
+  text-shadow: 1px 2px 0px #000000cc;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.master-meta-synopsis .badges-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  position: relative;
+}
+
+.master-meta-synopsis .design-component-instance-node {
+  flex: 0 0 auto !important;
+}
+
+.master-meta-synopsis .my-list-23 {
+  height: 30px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 4px !important;
+  width: 29px !important;
+}
+
+.master-meta-synopsis .icon-instance-node {
+  height: 26px !important;
+  margin-bottom: -2px !important;
+  position: relative !important;
+  width: 25px !important;
+}
+
+.master-meta-synopsis .my-list-24 {
+  height: 30px !important;
+  position: relative !important;
+  width: 29px !important;
+}

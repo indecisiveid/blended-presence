@@ -1,0 +1,224 @@
+.button {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.button .class-34 {
+  flex: 1 !important;
+  flex-grow: 1 !important;
+  width: unset !important;
+}
+
+.button .class-35 {
+  height: 95px !important;
+  left: -16px !important;
+  top: -7px !important;
+  width: 373px !important;
+}
+
+.button .class-36 {
+  height: 96px !important;
+  left: -16px !important;
+  top: -8px !important;
+  width: 373px !important;
+}
+
+.button .class-37 {
+  height: 96px !important;
+  left: -16px !important;
+  top: -8px !important;
+  width: 300px !important;
+}
+
+.button .class-38 {
+  height: 96px !important;
+  left: -13px !important;
+  top: -8px !important;
+  width: 293px !important;
+}
+
+.button .class-39 {
+  width: 122px !important;
+}
+
+.button .class-40 {
+  width: 268px !important;
+}
+
+.button .class-41 {
+  height: 7px !important;
+  width: 347px !important;
+}
+
+.button .class-42 {
+  height: 7px !important;
+  width: 273px !important;
+}
+
+.button .class-43 {
+  height: 95px !important;
+}
+
+.button .class-44 {
+  height: 96px !important;
+}
+
+.button .class-45 {
+  height: 95px !important;
+  width: 373px !important;
+}
+
+.button .class-46 {
+  height: 96px !important;
+  width: 300px !important;
+}
+
+.button .class-47 {
+  background-color: var(--glassbasebase-focused-action) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--base-shadow-focused-panel) !important;
+  height: 95px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 373px !important;
+}
+
+.button .class-48 {
+  background-color: var(--glassbasebase-focused-action) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--base-shadow-focused-panel) !important;
+  height: 96px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 300px !important;
+}
+
+.button .class-49 {
+  font-family: var(--buttons-button-strong-font-family) !important;
+  font-size: var(--buttons-button-strong-font-size) !important;
+  font-style: var(--buttons-button-strong-font-style) !important;
+  font-weight: var(--buttons-button-strong-font-weight) !important;
+  letter-spacing: var(--buttons-button-strong-letter-spacing) !important;
+  line-height: var(--buttons-button-strong-line-height) !important;
+  top: 29px !important;
+  width: 373px !important;
+}
+
+.button .class-50 {
+  font-family: var(--buttons-button-strong-font-family) !important;
+  font-size: var(--buttons-button-strong-font-size) !important;
+  font-style: var(--buttons-button-strong-font-style) !important;
+  font-weight: var(--buttons-button-strong-font-weight) !important;
+  letter-spacing: var(--buttons-button-strong-letter-spacing) !important;
+  line-height: var(--buttons-button-strong-line-height) !important;
+  top: 29px !important;
+  width: 293px !important;
+}
+
+.button .class-51 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-8@2x.png) !important;
+  height: 96px !important;
+}
+
+.button .class-52 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-6@2x.png) !important;
+  height: 96px !important;
+}
+
+.button .class-53 {
+  height: 5px !important;
+  left: 14px !important;
+  position: absolute !important;
+  top: 82px !important;
+  width: 345px !important;
+}
+
+.button .class-54 {
+  height: 5px !important;
+  left: 11px !important;
+  position: absolute !important;
+  top: 82px !important;
+  width: 271px !important;
+}
+
+.button .class-55 {
+  height: 5px !important;
+}
+
+.button .class-56 {
+  font-family: var(--buttons-button-strong-font-family) !important;
+  font-size: var(--buttons-button-strong-font-size) !important;
+  font-style: var(--buttons-button-strong-font-style) !important;
+  font-weight: var(--buttons-button-strong-font-weight) !important;
+  letter-spacing: var(--buttons-button-strong-letter-spacing) !important;
+  line-height: var(--buttons-button-strong-line-height) !important;
+  top: 29px !important;
+  width: 300px !important;
+}
+
+.button .class-57 {
+  height: 96px !important;
+  width: 373px !important;
+}
+
+.button .class-58 {
+  height: 96px !important;
+  width: 293px !important;
+}
+
+.button .class-59 {
+  background-color: var(--glassbasebase-focused-action) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--base-shadow-focused-panel) !important;
+  height: 96px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 373px !important;
+}
+
+.button .class-60 {
+  background-color: var(--glassbasebase-focused-action) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--base-shadow-focused-panel) !important;
+  height: 96px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 293px !important;
+}
+
+.button .class-61 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-13@2x.png) !important;
+  height: 95px !important;
+}
+
+.button .class-62 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-7@2x.png) !important;
+  height: 96px !important;
+}
+
+.button.type-2-standard {
+  width: 341px;
+}
+
+.button.type-2-one {
+  width: 122px;
+}
+
+.button.focus-3-focused {
+  height: 80px;
+}
+
+.button.focus-3-unfocused {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+.button.type-2-notification {
+  width: 268px;
+}

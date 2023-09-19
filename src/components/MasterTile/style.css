@@ -1,0 +1,10 @@
+.master-tile {
+  background-color: var(--glassbasebase-unfocused);
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/1-1-image-18@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 6px;
+  box-shadow: 4px 4px 8px #0000001f;
+  height: 268px;
+  width: 268px;
+}

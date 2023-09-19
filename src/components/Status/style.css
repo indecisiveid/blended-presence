@@ -1,0 +1,40 @@
+.status {
+  height: 36px;
+  position: relative;
+  width: 221px;
+}
+
+.status .added {
+  color: var(--glasssystemsystem-white-100);
+  font-family: var(--subline-subline-strong-font-family);
+  font-size: var(--subline-subline-strong-font-size);
+  font-style: var(--subline-subline-strong-font-style);
+  font-weight: var(--subline-subline-strong-font-weight);
+  height: 32px;
+  letter-spacing: var(--subline-subline-strong-letter-spacing);
+  line-height: var(--subline-subline-strong-line-height);
+  position: absolute;
+  text-shadow: 1px 2px 0px #000000cc;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.status .my-list {
+  height: 30px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 4px !important;
+  width: 29px !important;
+}
+
+.status .playlist {
+  left: 0;
+}
+
+.status .series {
+  left: 44px;
+}
+
+.status .default {
+  left: 44px;
+}

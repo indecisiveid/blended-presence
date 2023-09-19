@@ -1,0 +1,1 @@
+export { MetaSynopsis } from "./MetaSynopsis";

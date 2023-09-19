@@ -1,0 +1,21 @@
+.title-options-TV {
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  width: 796px;
+}
+
+.title-options-TV .program-title-one {
+  box-shadow: var(--text-drop-shadow);
+  color: var(--color-tokens-color-text-neutral);
+  flex: 1;
+  font-family: var(--TV-display-2-font-family);
+  font-size: var(--TV-display-2-font-size);
+  font-style: var(--TV-display-2-font-style);
+  font-weight: var(--TV-display-2-font-weight);
+  letter-spacing: var(--TV-display-2-letter-spacing);
+  line-height: var(--TV-display-2-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-shadow: 1px 2px 0px #000000cc;
+}

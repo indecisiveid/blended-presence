@@ -1,0 +1,1 @@
+export { StarFull } from "./StarFull";

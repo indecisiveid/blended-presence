@@ -1,0 +1,33 @@
+.progress-bar-master {
+  height: 4px;
+  width: 400px;
+}
+
+.progress-bar-master .element-wrapper {
+  background-color: var(--glasssystemsystem-white-40);
+  border-radius: 10px;
+  height: 6px;
+  left: -1px;
+  position: relative;
+  top: -1px;
+  width: 402px;
+}
+
+.progress-bar-master .fill-wrapper {
+  height: 4px;
+  left: 1px;
+  overflow: hidden;
+  position: relative;
+  top: 1px;
+  width: 400px;
+}
+
+.progress-bar-master .fill {
+  background-color: var(--brandcontrolcontrol-fill-primary);
+  border-radius: 10px;
+  height: 6px;
+  left: -1px;
+  position: relative;
+  top: -1px;
+  width: 402px;
+}

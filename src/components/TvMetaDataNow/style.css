@@ -1,0 +1,59 @@
+.TV-meta-data-now {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--responsive-tokens-spacer-md);
+  position: relative;
+  width: 496px;
+}
+
+.TV-meta-data-now .container-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: var(--responsive-tokens-spacer-xs);
+  position: relative;
+  width: 100%;
+}
+
+.TV-meta-data-now .provider-logo-7 {
+  height: 80px;
+  position: relative;
+  width: 160px;
+}
+
+.TV-meta-data-now .marquee-5 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.TV-meta-data-now .fade-6 {
+  height: 79px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: -88px;
+  width: 496px;
+}
+
+.TV-meta-data-now .title-4 {
+  align-self: stretch;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.TV-meta-data-now .description-4 {
+  align-self: stretch;
+  flex: 0 0 auto;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}

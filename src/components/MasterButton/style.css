@@ -1,0 +1,28 @@
+.master-button {
+  all: unset;
+  background-color: var(--glassbasebase-unfocused);
+  border-radius: 6px;
+  box-shadow: 4px 4px 8px #0000001f;
+  box-sizing: border-box;
+  height: 80px;
+  position: relative;
+  width: 341px;
+}
+
+.master-button .text-2 {
+  color: var(--glasssystemsystem-white-100);
+  font-family: var(--buttons-button-font-family);
+  font-size: var(--buttons-button-font-size);
+  font-style: var(--buttons-button-font-style);
+  font-weight: var(--buttons-button-font-weight);
+  height: 36px;
+  left: 0;
+  letter-spacing: var(--buttons-button-letter-spacing);
+  line-height: var(--buttons-button-line-height);
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 2px 0px #000000cc;
+  top: 21px;
+  white-space: nowrap;
+  width: 341px;
+}

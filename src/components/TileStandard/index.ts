@@ -1,0 +1,1 @@
+export { TileStandard } from "./TileStandard";

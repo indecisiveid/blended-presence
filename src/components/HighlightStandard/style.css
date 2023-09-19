@@ -1,0 +1,35 @@
+.highlight-standard {
+  height: 65px;
+  position: relative;
+  width: 115px;
+}
+
+.highlight-standard .overlap-group-2 {
+  height: 65px;
+  position: relative;
+}
+
+.highlight-standard .glint-instance {
+  margin-right: -23px !important;
+}
+
+.highlight-standard .class-9 {
+  height: 72px !important;
+  top: -32px !important;
+}
+
+.highlight-standard .img-2 {
+  height: 65px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 115px;
+}
+
+.highlight-standard .stroke-i {
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 4px;
+}

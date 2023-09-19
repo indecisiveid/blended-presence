@@ -1,0 +1,350 @@
+.tiles-TV {
+  position: relative;
+}
+
+.tiles-TV .overlap-group {
+  position: relative;
+}
+
+.tiles-TV .SKY-fade-wrapper {
+  height: 296px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 523px;
+}
+
+.tiles-TV .SKY-fade {
+  height: 260px !important;
+  position: relative !important;
+  top: 36px !important;
+  width: unset !important;
+}
+
+.tiles-TV .class-4 {
+  left: -3226px !important;
+  top: -301px !important;
+  width: 338px !important;
+}
+
+.tiles-TV .TV-meta-data-tiles-instance {
+  align-self: stretch !important;
+  width: 100% !important;
+}
+
+.tiles-TV .instance-node {
+  align-self: unset !important;
+  width: unset !important;
+}
+
+.tiles-TV .class-5 {
+  align-items: flex-start !important;
+  height: 217px !important;
+  justify-content: flex-end !important;
+  left: 0 !important;
+  padding: 0px 24px 16px var(--responsive-tokens-spacer-lg) !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 386px !important;
+}
+
+.tiles-TV .class-6 {
+  left: 0 !important;
+  padding: 0px var(--responsive-tokens-spacer-lg) var(--responsive-tokens-spacer-md) var(--responsive-tokens-spacer-lg) !important;
+  position: absolute !important;
+  top: 128px !important;
+  width: 523px !important;
+}
+
+.tiles-TV .class-7 {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 421px !important;
+  position: absolute !important;
+  top: 16px !important;
+}
+
+.tiles-TV .class-8 {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 284px !important;
+  position: absolute !important;
+  top: 16px !important;
+}
+
+.tiles-TV .dimmer-2 {
+  background-color: #00000033;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.tiles-TV .div-wrapper {
+  border-radius: var(--responsive-tokens-radius-md);
+  height: 336px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 571px;
+}
+
+.tiles-TV .SKY-fade-2 {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 74.13%,
+    rgba(0, 0, 0, 0.01) 81.77%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  border-radius: 6px;
+  height: 300px;
+  position: relative;
+  top: 36px;
+}
+
+.tiles-TV .TV-meta-data-tiles-2 {
+  height: 176px !important;
+  justify-content: flex-end !important;
+  left: 0 !important;
+  padding: 0px 24px var(--responsive-tokens-spacer-md) 24px !important;
+  position: absolute !important;
+  top: 156px !important;
+  width: 571px !important;
+}
+
+.tiles-TV .TV-meta-data-tiles-3 {
+  margin-top: -4px !important;
+}
+
+.tiles-TV .highlight-standard-instance {
+  height: 336px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 571px !important;
+}
+
+.tiles-TV .highlight-standard-2 {
+  height: 336px !important;
+}
+
+.tiles-TV .highlight-standard-3 {
+  height: 336px !important;
+  width: 571px !important;
+}
+
+.tiles-TV .highlight-standard-4 {
+  height: 331px !important;
+}
+
+.tiles-TV .badge-TV-default-instance {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 473px !important;
+  position: absolute !important;
+  top: 20px !important;
+}
+
+.tiles-TV .image-2 {
+  height: 236px;
+  left: -16px;
+  position: absolute;
+  top: -10px;
+  width: 418px;
+}
+
+.tiles-TV .image-3 {
+  height: 257px;
+  left: -24px;
+  object-fit: cover;
+  position: absolute;
+  top: -19px;
+  width: 434px;
+}
+
+.tiles-TV .badge-TV-default-2 {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 308px !important;
+  position: absolute !important;
+  top: -3px !important;
+}
+
+.tiles-TV .SKY-fade-3 {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 74.13%,
+    rgba(0, 0, 0, 0.01) 81.77%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  position: absolute;
+}
+
+.tiles-TV .TV-meta-data-tiles-4 {
+  left: 0 !important;
+  padding: 0px 0px 16px !important;
+  position: absolute !important;
+  top: 70px !important;
+  width: 386px !important;
+}
+
+.tiles-TV .TV-meta-data-tiles-5 {
+  left: -4134px !important;
+  top: -322px !important;
+  width: 386px !important;
+}
+
+.tiles-TV .highlight-standard-5 {
+  height: 257px !important;
+  left: -24px !important;
+  position: absolute !important;
+  top: -19px !important;
+  width: 434px !important;
+}
+
+.tiles-TV .highlight-standard-6 {
+  height: 257px !important;
+}
+
+.tiles-TV .highlight-standard-7 {
+  height: 257px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 434px !important;
+}
+
+.tiles-TV .highlight-standard-8 {
+  height: 257px !important;
+  width: 434px !important;
+}
+
+.tiles-TV .highlight-standard-9 {
+  height: 252px !important;
+}
+
+.tiles-TV .badge-TV-default-3 {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 300px !important;
+  position: absolute !important;
+  top: 6px !important;
+}
+
+.tiles-TV .TV-meta-data-tiles-6 {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  left: 0 !important;
+  padding: 0px 8px 6px !important;
+  position: absolute !important;
+  top: 59px !important;
+  width: 386px !important;
+}
+
+.tiles-TV .TV-meta-data-tiles-7 {
+  left: -3676px !important;
+  top: -311px !important;
+  width: 370px !important;
+}
+
+.tiles-TV.large {
+  height: 296px;
+  width: 523px;
+}
+
+.tiles-TV.focus {
+  border-radius: var(--responsive-tokens-radius-md);
+  box-shadow: 8px 8px 12px #0000001f;
+}
+
+.tiles-TV.expanded {
+  border-radius: var(--responsive-tokens-radius-sm);
+  box-shadow: 8px 8px 12px #0000001f;
+}
+
+.tiles-TV.resting {
+  background-position: 50% 50%;
+  background-size: cover;
+  box-shadow: var(--base-shadow-unfocused);
+  overflow: hidden;
+}
+
+.tiles-TV.standard {
+  height: 217px;
+  width: 386px;
+}
+
+.tiles-TV.resting.large {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/image--128.png);
+  border-radius: var(--responsive-tokens-radius-sm);
+}
+
+.tiles-TV.resting.standard {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/image--133@2x.png);
+  border-radius: var(--responsive-tokens-radius-xs);
+}
+
+.tiles-TV.focus .overlap-group {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/image--127.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  left: -24px;
+  top: -20px;
+  width: 571px;
+}
+
+.tiles-TV.standard .overlap-group {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 74.13%,
+    rgba(0, 0, 0, 0.01) 81.77%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  border-radius: 6px;
+  height: 217px;
+}
+
+.tiles-TV.resting.large .overlap-group {
+  height: 296px;
+}
+
+.tiles-TV.focus.large .overlap-group {
+  height: 336px;
+}
+
+.tiles-TV.large .dimmer-2 {
+  height: 296px;
+  width: 523px;
+}
+
+.tiles-TV.standard .dimmer-2 {
+  height: 217px;
+  width: 386px;
+}
+
+.tiles-TV.focus .SKY-fade-3 {
+  border-radius: var(--responsive-tokens-radius-md);
+  height: 258px;
+  left: -24px;
+  top: -20px;
+  width: 434px;
+}
+
+.tiles-TV.expanded .SKY-fade-3 {
+  border-radius: var(--responsive-tokens-radius-sm);
+  height: 237px;
+  left: -16px;
+  top: -10px;
+  width: 418px;
+}
+
+.tiles-TV.resting .SKY-fade-3 {
+  border-radius: var(--responsive-tokens-radius-sm);
+  height: 237px;
+  left: -16px;
+  top: -10px;
+  width: 418px;
+}

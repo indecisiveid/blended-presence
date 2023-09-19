@@ -1,0 +1,26 @@
+.placeholder {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  height: 49px;
+  padding: 4px;
+  position: relative;
+  width: 49px;
+}
+
+.placeholder .shape {
+  align-self: stretch;
+  border-radius: 20.5px;
+  flex: 1;
+  flex-grow: 1;
+  position: relative;
+}
+
+.placeholder .filled-true {
+  background-color: var(--color-tokens-color-fill-neutral);
+}
+
+.placeholder .filled-false {
+  border: 2px solid;
+  border-color: var(--color-tokens-color-fill-neutral);
+}

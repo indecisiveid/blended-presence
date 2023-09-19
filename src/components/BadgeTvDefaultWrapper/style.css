@@ -1,0 +1,27 @@
+.badge-TV-default-wrapper {
+  align-items: center;
+  background-color: var(--color-tokens-color-fill-inversesecondary);
+  border: 1px solid;
+  border-color: var(--color-tokens-color-stroke-neutralsecondary);
+  border-radius: var(--responsive-tokens-radius-radius-xs);
+  display: inline-flex;
+  gap: var(--responsive-tokens-spacer-spacer-xs);
+  justify-content: center;
+  padding: var(--responsive-tokens-spacer-spacer-xs) var(--responsive-tokens-spacer-spacer-md)
+    var(--responsive-tokens-spacer-spacer-xs) var(--responsive-tokens-spacer-spacer-md);
+  position: relative;
+}
+
+.badge-TV-default-wrapper .text-3 {
+  color: var(--color-tokens-color-text-neutral);
+  font-family: var(--TV-tag-font-family);
+  font-size: var(--TV-tag-font-size);
+  font-style: var(--TV-tag-font-style);
+  font-weight: var(--TV-tag-font-weight);
+  letter-spacing: var(--TV-tag-letter-spacing);
+  line-height: var(--TV-tag-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}

@@ -1,0 +1,40 @@
+.master-circle-tile {
+  background-color: var(--glassbasebase-unfocused);
+  border-radius: 1000px;
+  box-shadow: 4px 4px 8px #0000001f;
+  height: 122px;
+  position: relative;
+  width: 122px;
+}
+
+.master-circle-tile .plus-instance {
+  height: 34px !important;
+  left: 45px !important;
+  position: absolute !important;
+  top: 45px !important;
+  width: 33px !important;
+}
+
+.master-circle-tile .text-4 {
+  color: var(--glasssystemsystem-white-100);
+  font-family: var(--headings-heading-page-font-family);
+  font-size: var(--headings-heading-page-font-size);
+  font-style: var(--headings-heading-page-font-style);
+  font-weight: var(--headings-heading-page-font-weight);
+  height: 60px;
+  left: 31px;
+  letter-spacing: var(--headings-heading-page-letter-spacing);
+  line-height: var(--headings-heading-page-line-height);
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 2px 0px #000000cc;
+  top: 30px;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.master-circle-tile.type-image {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/circle-image@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+}

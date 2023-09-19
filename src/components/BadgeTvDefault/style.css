@@ -1,0 +1,25 @@
+.badge-TV-default {
+  align-items: center;
+  background-color: var(--color-tokens-color-fill-inversesecondary);
+  border: 1px solid;
+  border-color: var(--color-tokens-color-stroke-neutralsecondary);
+  border-radius: 4px;
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+  padding: 4px 8px;
+  position: relative;
+}
+
+.badge-TV-default .text {
+  color: var(--color-tokens-color-text-neutral);
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}

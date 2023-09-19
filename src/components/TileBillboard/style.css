@@ -1,0 +1,44 @@
+.tile-billboard {
+  position: relative;
+}
+
+.tile-billboard .class-30 {
+  height: 704px !important;
+  left: -24px !important;
+  top: -20px !important;
+  width: 1776px !important;
+}
+
+.tile-billboard .class-31 {
+  height: 704px !important;
+  width: 1776px !important;
+}
+
+.tile-billboard .class-32 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/stroke-3.png) !important;
+  height: 704px !important;
+}
+
+.tile-billboard .class-33 {
+  height: 704px !important;
+}
+
+.tile-billboard .my-list-10 {
+  height: 30px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 4px !important;
+  width: 29px !important;
+}
+
+.tile-billboard.focus-2-focused {
+  height: 664px;
+  width: 1728px;
+}
+
+.tile-billboard.focus-2-unfocused {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}

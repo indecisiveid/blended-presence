@@ -1,0 +1,74 @@
+.variant-unfocused-wrapper {
+  height: 330px;
+  position: relative;
+  width: 249px;
+}
+
+.variant-unfocused-wrapper .dimmer-instance {
+  background-color: #00000033 !important;
+  height: 330px !important;
+  width: unset !important;
+}
+
+.variant-unfocused-wrapper .image-4 {
+  height: 370px;
+  left: -16px;
+  object-fit: cover;
+  position: absolute;
+  top: -20px;
+  width: 281px;
+}
+
+.variant-unfocused-wrapper .overlap {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/image--50@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 390px;
+  left: -24px;
+  position: relative;
+  top: -30px;
+  width: 297px;
+}
+
+.variant-unfocused-wrapper .overlap-group-wrapper {
+  height: 390px;
+}
+
+.variant-unfocused-wrapper .overlap-group-4 {
+  height: 390px;
+  position: relative;
+  width: 297px;
+}
+
+.variant-unfocused-wrapper .stroke-II {
+  height: 390px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 297px !important;
+}
+
+.variant-unfocused-wrapper .stroke-i-2 {
+  height: 385px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 4px;
+}
+
+.variant-unfocused-wrapper.unfocused {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/image--52@2x.png);
+  background-size: 100% 100%;
+  border-radius: var(--responsive-tokens-radius-xs);
+  box-shadow: 4px 4px 8px #0000001f;
+  overflow: hidden;
+}
+
+.variant-unfocused-wrapper.selected {
+  border-radius: var(--responsive-tokens-radius-sm);
+  box-shadow: 8px 8px 12px #0000001f;
+}
+
+.variant-unfocused-wrapper.focused {
+  box-shadow: 8px 8px 12px #0000001f;
+}

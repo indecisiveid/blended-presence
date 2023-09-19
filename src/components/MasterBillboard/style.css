@@ -1,0 +1,27 @@
+.master-billboard {
+  background-color: var(--glassbasebase-unfocused);
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/hero-masked-3.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px #0000001f;
+  height: 664px;
+  overflow: hidden;
+  width: 1728px;
+}
+
+.master-billboard .meta-tiles-wrapper {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/title-art-17.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 742px;
+  width: 1320px;
+}
+
+.master-billboard .my-list-6 {
+  height: 30px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 4px !important;
+  width: 29px !important;
+}

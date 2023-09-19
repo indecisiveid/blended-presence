@@ -1,0 +1,1 @@
+export { MasterStars } from "./MasterStars";

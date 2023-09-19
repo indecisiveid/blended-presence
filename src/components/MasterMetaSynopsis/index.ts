@@ -1,0 +1,1 @@
+export { MasterMetaSynopsis } from "./MasterMetaSynopsis";

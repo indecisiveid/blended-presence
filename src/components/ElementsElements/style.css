@@ -1,0 +1,47 @@
+.elements-elements {
+  height: 73px;
+  position: relative;
+}
+
+.elements-elements .footprint {
+  height: 73px;
+  left: 8384px;
+  object-fit: cover;
+  position: absolute;
+  top: 12009px;
+  width: 115px;
+}
+
+.elements-elements .network-provider {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/tnt@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 73px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 73px;
+}
+
+.elements-elements.size-1-large {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/footprint-1@2x.png);
+  width: 212px;
+}
+
+.elements-elements.size-1-small {
+  width: 115px;
+}
+
+.elements-elements.size-1-medium {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/footprint-2@2x.png);
+  width: 177px;
+}
+
+.elements-elements.image {
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.elements-elements.size-1-small.image {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/footprint-4@2x.png);
+}

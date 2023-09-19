@@ -1,0 +1,19 @@
+.progress-bar {
+  height: 4px;
+  position: relative;
+  width: 400px;
+}
+
+.progress-bar .bg-wrapper {
+  height: 4px;
+}
+
+.progress-bar .bg {
+  background-color: var(--glasssystemsystem-white-40);
+  border-radius: 10px;
+  height: 6px;
+  left: -1px;
+  position: relative;
+  top: -1px;
+  width: 402px;
+}

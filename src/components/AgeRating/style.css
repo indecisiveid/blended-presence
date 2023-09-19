@@ -1,0 +1,9 @@
+.age-rating {
+  align-items: flex-start;
+  display: inline-flex;
+  position: relative;
+}
+
+.age-rating .master-badge-instance {
+  flex: 0 0 auto !important;
+}

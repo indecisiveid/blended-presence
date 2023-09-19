@@ -1,0 +1,1 @@
+export { DetailsTvLinear } from "./DetailsTvLinear";

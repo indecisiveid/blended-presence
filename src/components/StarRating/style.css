@@ -1,0 +1,75 @@
+.star-rating {
+  height: 36px;
+  position: relative;
+  width: 136px;
+}
+
+.star-rating .master-stars-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px 0px;
+  position: relative;
+}
+
+.star-rating .star-8 {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.star-rating .overlap-4 {
+  height: 24px;
+  position: relative;
+}
+
+.star-rating .star-9 {
+  height: 24px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 24px !important;
+}
+
+.star-rating .star-10 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/shadow-21@2x.png) !important;
+}
+
+.star-rating .star-11 {
+  height: 24px !important;
+  top: 2px !important;
+  width: 24px !important;
+}
+
+.star-rating .half-star-3 {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
+
+.star-rating .star-12 {
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.star-rating .instance-node-2 {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/shadow-16@2x.png) !important;
+  width: 46px !important;
+}
+
+.star-rating .star-3-instance {
+  height: 26px !important;
+  margin-bottom: -2px !important;
+  margin-right: -1px !important;
+  position: relative !important;
+  width: 25px !important;
+}
+
+.star-rating .star-13 {
+  height: 26px !important;
+  margin-bottom: -2px !important;
+  position: relative !important;
+  width: 25px !important;
+}

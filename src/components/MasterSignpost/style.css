@@ -1,0 +1,12 @@
+.master-signpost {
+  height: 36px;
+  width: 28px;
+}
+
+.master-signpost .master-circle-tile-instance {
+  background-image: url(https://c.animaapp.com/pLg7BaBQ/img/circle-image-13@2x.png) !important;
+  box-shadow: 1px 2px 0px #000000cc !important;
+  height: 28px !important;
+  top: 4px !important;
+  width: unset !important;
+}

@@ -1,0 +1,91 @@
+.details-TV-linear {
+  align-items: center;
+  display: inline-flex;
+  gap: 16px;
+  position: relative;
+}
+
+.details-TV-linear .description-5 {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: var(--responsive-tokens-spacer-spacer-sm);
+  position: relative;
+}
+
+.details-TV-linear .div-2 {
+  box-shadow: var(--text-drop-shadow);
+  color: var(--color-tokens-color-text-neutral);
+  font-family: var(--TV-body-2-font-family);
+  font-size: var(--TV-body-2-font-size);
+  font-style: var(--TV-body-2-font-style);
+  font-weight: var(--TV-body-2-font-weight);
+  letter-spacing: var(--TV-body-2-letter-spacing);
+  line-height: var(--TV-body-2-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-shadow: 1px 2px 0px #000000cc;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.details-TV-linear .badges-3 {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: var(--responsive-tokens-spacer-spacer-sm);
+  position: relative;
+}
+
+.details-TV-linear .badge-instance {
+  flex: 0 0 auto !important;
+}
+
+.details-TV-linear .rating {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.details-TV-linear .rating-2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: var(--responsive-tokens-spacer-spacer-xs);
+  position: relative;
+}
+
+.details-TV-linear .episodes {
+  align-items: center;
+}
+
+.details-TV-linear .movie-program {
+  align-items: flex-start;
+}
+
+.details-TV-linear .variant-episodes {
+  align-items: flex-start;
+}
+
+.details-TV-linear .started-at {
+  align-items: flex-start;
+}
+
+.details-TV-linear .variant-movie-program.finished {
+  align-items: center;
+}
+
+.details-TV-linear .starts-at.variant-movie-program {
+  align-items: center;
+}
+
+.details-TV-linear .string-options-started-at {
+  gap: var(--responsive-tokens-spacer-spacer-xs);
+}
+
+.details-TV-linear .string-options-starts-at {
+  gap: var(--responsive-tokens-spacer-spacer-xs);
+}
+
+.details-TV-linear .string-options-finished {
+  gap: var(--responsive-tokens-spacer-md);
+}
