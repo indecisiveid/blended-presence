@@ -104,3 +104,13 @@
   gap: 8px;
   padding: 0px 24px 16px;
 }
+
+.custom-title {
+  font-size: 30px;
+  color: white;
+  font-family: Work Sans, Helvetica !important;
+}
+.custom-desc {
+  color: white;
+  font-family: Work Sans, Helvetica !important;
+}

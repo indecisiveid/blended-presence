@@ -1,0 +1,171 @@
+{
+   "entryCount":27,
+   "sessionId":"comcast:compass:session:787240648516322748",
+   "discoveryId":"browse-2.94.0-10.42.59.39-7-600-1695317815",
+   "menuItems":[
+      {
+         "programId":"comcast:compass:program:4935551334475850112",
+         "title":"20/20",
+         "synopsis":"Unforgettable true crime mysteries, exclusive newsmaker interviews and investigative reports.",
+         "programType":"SeriesMaster",
+         "Provider Poster Art": "http://edge.myriad-store-prod.top.comcast.net/myriad/chaz2/CHANNEL_STORE/2023-Sep/lluw6iBafoTFrGOZkjk.jpg",
+      },
+      {
+         "programId":"comcast:compass:program:6506353099074158112",
+         "title":"9-1-1",
+         "synopsis":"The lives and careers of emergency response providers who put their lives at risk to save others in the most frightening, shocking and heart-stopping situations.",
+         "programType":"SeriesMaster",
+         "Provider Poster Art": "http://edge.myriad-store-prod.top.comcast.net/myriad/chaz2/CHANNEL_STORE/2023-Sep/lluw6iBafoTFrGOZkjk.jpg",
+      },
+      {
+         "programId":"comcast:compass:program:8113423603394025112",
+         "title":"48 Hours",
+         "synopsis":"Investigative reports on crime and justice cases.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:8142221035322852112",
+         "title":"9/11: One Day in America",
+         "synopsis":"Examining the harrowing moments of the historic morning of Sept. 11, 2001.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:8819838791364839112",
+         "title":"9-1-1: Lone Star",
+         "synopsis":"A New York firefighter, along with his son, relocates to Austin, where he must try to balance the duties of saving those who are at their most vulnerable and solving the problems in his own life.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:5023876205481124112",
+         "title":"Avengers: Infinity War",
+         "synopsis":"Iron Man, Thor and the rest of the Avengers battle their most powerful enemy yet -- the evil Thanos.",
+         "programType":"Movie"
+      },
+      {
+         "programId":"comcast:compass:program:8631242044462880112",
+         "title":"Big Little Lies",
+         "synopsis":"The stories of three mothers of first-graders whose seemingly perfect lives begin to unravel to the point of murder.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7985916487011463112",
+         "title":"Calls From the Inside",
+         "synopsis":"Admissions, threats, slips of the tongue, and bribes that are heard on jailhouse phone calls are used to frame the narrative of murder investigations steeped in mystery.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:8263985552066829112",
+         "title":"Casey Anthony: Where the Truth Lies",
+         "synopsis":"Casey Anthony tells her story in her own words, offering a new perspective on the infamous case involving the untimely death of her 2-year-old daughter Caylee.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:8823872658580214112",
+         "title":"Cruel Summer",
+         "synopsis":"In this anthology series, each season follows a new cast of characters who deal with traumatic events over several timelines, and how those events impact their lives.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7871149542362234112",
+         "title":"Dark Side of the 2000s",
+         "synopsis":"Diving into the unseen histories of the 2000s decade, revealing dark secrets and personal insights from the people who witnessed it.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:4659631500977387112",
+         "title":"Escaping Captivity: The Kara Robinson Story",
+         "synopsis":"The story of Kara Robinson, who was abducted in broad daylight from a friend's front yard.",
+         "programType":"Other"
+      },
+      {
+         "programId":"comcast:compass:program:5191720111929016112",
+         "title":"Grey's Anatomy",
+         "synopsis":"A team of doctors at Grey Sloan Memorial are faced with life-or-death decisions on a daily basis; together they discover that neither medicine nor relationships can be defined in black and white.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:6598449835135163112",
+         "title":"Man in Red Bandana",
+         "synopsis":"Welles Crowther saves at least 10 people in the World Trade Center during the attacks on 9/11.",
+         "programType":"Movie"
+      },
+      {
+         "programId":"comcast:compass:program:6158438733133910112",
+         "title":"Modern Family",
+         "synopsis":"Told from the perspective of an unseen documentary filmmaker, the series offers an honest, often-hilarious perspective of a diverse clan that bridges cultural and generational gaps.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7341552196251845112",
+         "title":"No Hard Feelings",
+         "synopsis":"Desperate for cash, a woman agrees to date a rich couple's introverted and awkward 19-year-old son.",
+         "programType":"Movie"
+      },
+      {
+         "programId":"comcast:compass:program:6399030785461945112",
+         "title":"Riverdale",
+         "synopsis":"Archie Andrews navigates the drama of small-town life while working toward a future in music.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:8008114813703435112",
+         "title":"Scream",
+         "synopsis":"A psycho killer targets a past victim's daughter (Neve Campbell).",
+         "programType":"Movie"
+      },
+      {
+         "programId":"comcast:compass:program:5975632584180827112",
+         "title":"Scream 3",
+         "synopsis":"A young woman, a reporter and an ex-policeman are drawn to the set of a horror movie.",
+         "programType":"Movie"
+      },
+      {
+         "programId":"comcast:compass:program:8397615986886091112",
+         "title":"The Conners",
+         "synopsis":"The Conners grapple with parenthood, dating, financial pressures and aging in Lanford.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:5076455757802395112",
+         "title":"The Flash",
+         "synopsis":"When a freak accident grants CSI Barry Allen superspeed, he uses the power to solve crimes.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7833078292078368112",
+         "title":"The Goldbergs",
+         "synopsis":"In the 1980s, geeky Adam uses a video camera to document the antics of his overprotective mother, stern father and two older siblings.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:4903940451926386112",
+         "title":"The Rookie",
+         "synopsis":"A life-altering incident inspires a small-town guy to pursue his dream of becoming an officer with the Los Angeles Police Department.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:6553068432672059112",
+         "title":"The Sopranos",
+         "synopsis":"Tony Soprano tries to be a good family man and run the New Jersey mob.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7063809399527539112",
+         "title":"Upload",
+         "synopsis":"A man is able to choose his own afterlife after his untimely death.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:7034893369976297112",
+         "title":"Yellowstone",
+         "synopsis":"John Dutton tries to protect his ranch, the largest in the United States, from land developers, an Indian reservation and America's first National Park.",
+         "programType":"SeriesMaster"
+      },
+      {
+         "programId":"comcast:compass:program:6885354108119507112",
+         "title":"Young Sheldon",
+         "synopsis":"Eccentric and extraordinary Sheldon Cooper embarks on his innocent, awkward and hopeful journey toward the man he will become.",
+         "programType":"SeriesMaster"
+      }
+   ]
+}

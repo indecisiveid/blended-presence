@@ -59,18 +59,13 @@ export const SizeTileLogoWrapper = ({
         {logoPosition === "top" && (
           <>
             <>
-              {providerLogo && (
-                <img className={`provider-logo-5 ${providerLogoClassName}`} alt="Provider logo" src={img} />
-              )}
+              
             </>
             <div className="marquee-3">
               {hasFade && <img className={`fade-3 ${fadeClassName}`} alt="Fade" src={fade} />}
-
-              {title1 && <img className={`title-3 ${titleClassName}`} alt="Title" src={title2} />}
-
-              {description && (
-                <img className={`description-3 ${descriptionClassName}`} alt="Description" src={description2} />
-              )}
+              <div className="custom-title">
+                {title}
+              </div>
             </div>
           </>
         )}

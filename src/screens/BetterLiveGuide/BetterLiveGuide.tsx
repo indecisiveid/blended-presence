@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { BadgeTvDefault } from "../../components/BadgeTvDefault";
 import { BadgeTvDefaultWrapper } from "../../components/BadgeTvDefaultWrapper";
 import { BrandGradient } from "../../components/BrandGradient";
@@ -25,11 +25,129 @@ import { TilesTv } from "../../components/TilesTv";
 import { TitleArt } from "../../components/TitleArt";
 import { TvMetaDataTiles } from "../../components/TvMetaDataTiles";
 import { VariantUnfocusedWrapper } from "../../components/VariantUnfocusedWrapper";
+import { CustomTileWrapper } from "../../components/CustomTileWrapper";
 import { MyList } from "../../icons/MyList";
 import { MyList3 } from "../../icons/MyList3";
+import ImageComponent from './ImageComponent';
+import ImageComponent2 from './ImageComponent2';
+import ImageComponent3 from './ImageComponent3';
 import "./style.css";
+import family_program_browse_response_shrunken from '../../profileContent/family_program_browse_response_shrunken.json';
+import gru_program_browse_response_shrunken from '../../profileContent/gru_program_browse_response_shrunken.json';
+import theresa_and_gru_program_browse_response_shrunken from '../../profileContent/theresa_and_gru_program_browse_response_shrunken.json';
+import theresa_program_browse_response_shrunken from '../../profileContent/theresa_program_browse_response_shrunken.json'
 
 export const BetterLiveGuide = (): JSX.Element => {
+
+  interface Profile {
+    displayName: string;
+    entityId: string;
+    avatarId: string;
+    displayAvatar?: boolean;
+  }
+  
+  // Define the state and initial value
+  const [currentProfiles, setCurrentProfiles] = useState<Record<string, Profile>>({
+    // The kid's profile
+    profile1 : {
+      entityId: "aa9e8e55-7f30-43c2-9716-0a20e4094a32",
+      displayName: "",
+      avatarId: "",
+      displayAvatar: false
+    },
+    // Kevin's Profile
+    profile2 : {
+      entityId: "2e5f6e3d-0897-4850-bdd9-68f7ac5fbabd",
+      displayName: "",
+      avatarId: "",
+      displayAvatar: false
+    },
+    // Hai's Profile
+    profile3 : {
+      entityId: "b15cfc5d-a0a8-443a-9c5e-44637b0b3464",
+      displayName: "",
+      avatarId: "",
+      displayAvatar: false
+    }
+  });
+  const profilesToShow = Object.values(currentProfiles).filter(profile => profile.displayAvatar);
+  
+  // Build the title string based on displayNames
+  let title = "";
+  if (profilesToShow.length === 1) {
+    title = `${profilesToShow[0].displayName}`;
+  } else if (profilesToShow.length > 1) {
+    const lastProfile = profilesToShow.pop();
+    if (lastProfile) {  // Check to make sure lastProfile is not undefined
+      const names = profilesToShow.map(profile => profile.displayName).join(", ");
+      title = `${names} and ${lastProfile.displayName}`;
+    }
+  } else {
+    title = "No content";  // or any default text you want to show
+  }
+
+  const isJSON = (str: string) => {
+    try {
+      JSON.parse(str);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+  
+  useEffect(() => {
+    const ws = new WebSocket('ws://localhost:2500');
+  
+    ws.onmessage = (event) => {
+      if (isJSON(event.data)) {
+        const data = JSON.parse(event.data);
+        const { interface_type, presence_status, ...numberedProfiles } = data;
+  
+        // Filter only the profile objects and make sure they are not null and have 'entityId'
+        const updatedProfiles = Object.fromEntries(
+          Object.entries(numberedProfiles).filter(
+            ([key, value]) => value !== null && typeof value === 'object' && value.hasOwnProperty('entityId')
+          )
+        );
+  
+        // Copy the current state
+        const newProfiles: Record<string, Profile> = { ...currentProfiles };
+  
+        // Create a set of entityIds received in the update for quick lookup
+        const updatedEntityIds = new Set(Object.values(updatedProfiles).map((profile: any) => profile.entityId));
+  
+        // Loop over the keys of newProfiles
+        Object.keys(newProfiles).forEach((key) => {
+          const profile = newProfiles[key];
+          
+          if (typeof profile === 'object' && profile.hasOwnProperty('entityId')) {
+            const matchingProfile = Object.values(updatedProfiles).find(
+              (updatedProfile: any) => updatedProfile.entityId === profile.entityId
+            ) as Profile | undefined;
+    
+            if (matchingProfile) {
+              if (typeof matchingProfile === 'object' && matchingProfile.hasOwnProperty('displayName')) {
+                profile.displayName = matchingProfile.displayName;
+                // Set displayAvatar based on presence_status from WebSocket data
+                profile.displayAvatar = presence_status;
+              }
+            } else if (!updatedEntityIds.has(profile.entityId)) {
+              profile.displayAvatar = false;
+            }
+          }
+        });
+  
+        // Update the state
+        setCurrentProfiles(newProfiles);
+      }
+    };
+  
+    return () => {
+      ws.close();
+    };
+  }, [currentProfiles]);  
+  
+
   return (
     <div className="better-live-guide">
       <div className="div-3">
@@ -47,7 +165,7 @@ export const BetterLiveGuide = (): JSX.Element => {
               providerLogo="https://c.animaapp.com/pLg7BaBQ/img/providerlogo@2x.png"
               providerRowClassName="contentblock-TV-2"
               titleOptionsTvDivClassName="contentblock-TV-4"
-              titleOptionsTvProgramTitle="Avatar: The Way of Water"
+              titleOptionsTvProgramTitle="Avatar: The Way of the Water"
             />
             <div className="element-rail-large">
               <div className="tiles-3">
@@ -206,10 +324,29 @@ export const BetterLiveGuide = (): JSX.Element => {
               elementsElementsSizeSmallVariantClassName="standard-header-2"
               mode="new"
             />
+            <div>
+            </div>
             <div className="time-battery">
               <div className="time">12.56pm</div>
             </div>
-          </div>
+              <div className="profile">
+                <div className="first-profile">
+                  {currentProfiles['profile1'] && currentProfiles['profile1'].displayAvatar ? (
+                      <ImageComponent />
+                  ) : null}
+                </div>
+                <div className="second-profile">
+                    {currentProfiles['profile2'] && currentProfiles['profile2'].displayAvatar ? (
+                        <ImageComponent2 />
+                    ) : null}
+                  </div>
+                <div className="third-profile">
+                    {currentProfiles['profile3'] && currentProfiles['profile3'].displayAvatar ? (
+                        <ImageComponent3 />
+                    ) : null}
+                </div>
+                </div>
+              </div>
           <div className="rail">
             <div className="element-standard">
               <div className="tiles-4">
@@ -306,470 +443,51 @@ export const BetterLiveGuide = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="element-rail">
-          <p className="rail-title-4">New movies to rent or buy</p>
-          <div className="tiles-5">
-            <VariantUnfocusedWrapper className="tiles-3-4-TV" variant="unfocused" />
-            <div className="tiles-TV-2">
-              <div className="dimmer-wrapper">
-                <Dimmer className="dimmer-5" />
-              </div>
-            </div>
-            <div className="tiles-TV-3">
-              <div className="dimmer-instance-wrapper">
-                <Dimmer className="dimmer-5" />
-              </div>
-            </div>
-            <VariantUnfocusedWrapper className="tiles-TV-instance" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-3-4-TV-instance" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-4" variant="unfocused" />
-            <div className="tiles-TV-5">
-              <div className="overlap-group-12">
-                <img className="image-10" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--43@2x.png" />
-                <Dimmer className="dimmer-6" />
-              </div>
-            </div>
-            <VariantUnfocusedWrapper className="tiles-TV-6" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-7" variant="unfocused" />
-          </div>
-        </div>
-        <div className="element-rail-2">
-          <div className="rail-title-4">Trending TV</div>
-          <div className="tiles-6">
-            <VariantUnfocusedWrapper className="tiles-TV-8" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-9" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-10" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-11" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-12" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-13" variant="unfocused" />
-            <div className="tiles-TV-5">
-              <div className="overlap-group-12">
-                <img className="image-11" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--34@2x.png" />
-                <Dimmer className="dimmer-6" />
-              </div>
-            </div>
-            <VariantUnfocusedWrapper className="tiles-TV-14" variant="unfocused" />
-            <VariantUnfocusedWrapper className="tiles-TV-15" variant="unfocused" />
-          </div>
-        </div>
-        <div className="billboard">
-          <div className="tiles-7">
-            <TileBillboard
-              className="tile-billboard-instance"
-              focus="unfocused"
-              focusUnfocusedWrapperMasterBillboardMasterBillboardClassName="element-39"
-              focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisEpisodeClassName="element-38"
-              focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusDivClassName="element-38"
-              focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusIcon={
-                <MyList3 className="my-list-2" />
-              }
-              focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusText="Series Added"
-              focusUnfocusedWrapperMasterBillboardMetaTilesProgrammeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/programme-title-2.svg"
-              focusUnfocusedWrapperMasterBillboardMetaTilesProviderLogoProviderLogoClassName="design-component-instance-node-2"
-              focusUnfocusedWrapperMasterBillboardOverlapGroupClassName="element-40"
-            />
-            <div className="master-billboard-wrapper">
-              <div className="master-billboard-2">
-                <div className="overlap-9">
-                  <div className="master-billboard-3">
-                    <div className="overlap-group-13">
-                      <img
-                        className="hero-masked"
-                        alt="Hero masked"
-                        src="https://c.animaapp.com/pLg7BaBQ/img/hero-masked-1.svg"
-                      />
-                      <TitleArt className="title-art-instance" />
-                      <MetaTiles
-                        className="meta-tiles-3"
-                        focus="unfocused"
-                        metaSynopsisMasterMetaSynopsisEpisodeClassName="design-component-instance-node-4"
-                        metaSynopsisMasterMetaSynopsisStatusDivClassName="design-component-instance-node-5"
-                        metaSynopsisMasterMetaSynopsisStatusText="Added"
-                        metaSynopsisTypeMovieClassName="design-component-instance-node-3"
-                        programmeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/programme-title-1.svg"
-                        providerLogoProviderLogoClassName="meta-tiles-4"
-                        type="billboard"
-                      />
-                    </div>
-                  </div>
-                  <ElementsDimmer className="elements-dimmer-2" />
-                </div>
-              </div>
-            </div>
-            <div className="element-41">
-              <div className="master-billboard-2">
-                <MasterBillboard
-                  className="master-billboard-tile-instance"
-                  metaTilesMetaSynopsisMasterMetaSynopsisEpisodeClassName="design-component-instance-node-4"
-                  metaTilesMetaSynopsisMasterMetaSynopsisStatusDivClassName="design-component-instance-node-5"
-                  metaTilesMetaSynopsisMasterMetaSynopsisStatusText="Added"
-                  metaTilesMetaSynopsisTypeMovieClassName="design-component-instance-node-3"
-                  metaTilesProgrammeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  metaTilesProgrammeTitleProgrammeTitleClassName="master-billboard-instance"
-                  metaTilesProviderLogoProviderLogoClassName="master-billboard-6"
-                  metaTilesTypeMinimisedFocusClassName="master-billboard-5"
-                  overlapGroupClassName="master-billboard-4"
-                />
-                <ElementsDimmer className="elements-dimmer-2" />
-              </div>
+        <div className="lozenge-rails" id="actions-rail">
+          <LozengeTvCategory
+            category="My List"
+            focus={false}
+            labelClassName="lozenge-TV-category-2"
+            overlapGroupClassName="lozenge-TV-category-instance"
+          />
+          <LozengeTvCategory
+            category="Search"
+            focus={false}
+            labelClassName="lozenge-TV-category-2"
+            overlapGroupClassName="lozenge-TV-category-3"
+          />
+          <LozengeTvCategory
+            category="TV Shows"
+            focus={false}
+            labelClassName="lozenge-TV-category-2"
+            overlapGroupClassName="lozenge-TV-category-4"
+          />
+          <LozengeTvCategory
+            category="Movies"
+            focus={false}
+            labelClassName="lozenge-TV-category-2"
+            overlapGroupClassName="lozenge-TV-category-5"
+          />
+          <div className="lozenge-TV-category-6">
+            <div className="overlap-15">
+              <BrandGradient
+                className="brand-gradient-instance"
+                img="https://c.animaapp.com/pLg7BaBQ/img/-brand-gradient---2.svg"
+                position="five"
+              />
+              <div className="label-3">Sports</div>
             </div>
           </div>
-        </div>
-        <div className="hero-switcher-TV">
-          <div className="overlap-10">
-            <HeroImage
-              mask="three-content-block"
-              maskContentBlock="https://c.animaapp.com/pLg7BaBQ/img/image-mask-options.svg"
-              maskTileFadeClassName="image-mask-options"
+          <div className="lozenge-TV-category-6">
+            <BrandGradient
+              className="brand-gradient-2"
+              position="six"
+              position1="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
             />
-            <TitleArt className="title-art-2" />
-            <div className="synopsis">
-              <ProviderLogo className="design-component-instance-node-2" />
-              <div className="title-6">Succession</div>
-              <div className="meta-buttons">
-                <div className="frame-3">
-                  <MetaSynopsis
-                    className="design-component-instance-node-7"
-                    masterMetaSynopsisAccessibilityBadgeClassName="design-component-instance-node-6"
-                    masterMetaSynopsisAccessibilityBadgeClassNameOverride="design-component-instance-node-6"
-                    masterMetaSynopsisAgeRatingClassName="design-component-instance-node-6"
-                    masterMetaSynopsisDurationClassName="meta-synopsis-instance"
-                    masterMetaSynopsisEpisode={false}
-                    masterMetaSynopsisStatusDivClassName="meta-synopsis-2"
-                    masterMetaSynopsisStatusIcon={<MyList className="my-list-2" />}
-                    masterMetaSynopsisStatusText="Series Added"
-                    masterMetaSynopsisVideoQualityClassName="design-component-instance-node-6"
-                    type="catch-up"
-                  />
-                  <p className="synopsis-2">
-                    Don’t miss the award-winning, provocative, funny series about a highly dysfunctional dynasty.
-                  </p>
-                </div>
-                <ButtonRail
-                  buttonMasterButtonFocusMasterButtonText="Watch"
-                  buttonMasterButtonFocusMasterButtonTextClassName="design-component-instance-node-6"
-                  className="design-component-instance-node-7"
-                  focus="unfocused"
-                  scrolled={false}
-                  visible={false}
-                  visible1={false}
-                />
-              </div>
-            </div>
+            <div className="label-4">Category</div>
           </div>
         </div>
-        <div className="element-rail-large-2">
-          <div className="rail-title-5">News on now</div>
-          <div className="tiles-8">
-            <div className="element-42" data-responsive-tokens-mode="TV">
-              <div className="overlap-group-11">
-                <div className="div-4">
-                  <ElementsFade className="SKY-fade-7" />
-                </div>
-                <TvMetaDataTiles
-                  className="TV-meta-data-tiles-32"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-36.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-35@2x.png"
-                  fadeClassName="TV-meta-data-tiles-33"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-31@2x.png"
-                  logoPosition="top"
-                  progressBarBrandBarMoveUseClassName="TV-meta-data-tiles-20"
-                  progressBarBrandHeightSmallClassName="TV-meta-data-tiles-19"
-                  progressBarBrandProgressClassName="TV-meta-data-tiles-20"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-36.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-4" />
-              </div>
-            </div>
-            <div className="element-43" data-responsive-tokens-mode="TV">
-              <div className="overlap-group-11">
-                <div className="div-4">
-                  <ElementsFade className="SKY-fade-7" />
-                </div>
-                <TvMetaDataTiles
-                  className="TV-meta-data-tiles-32"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-35.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-34@2x.png"
-                  fadeClassName="TV-meta-data-tiles-34"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-30@2x.png"
-                  logoPosition="top"
-                  progressBarBrandBarMoveUseClassName="TV-meta-data-tiles-20"
-                  progressBarBrandHeightSmallClassName="TV-meta-data-tiles-19"
-                  progressBarBrandProgressClassName="TV-meta-data-tiles-20"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-35.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-4" />
-              </div>
-            </div>
-            <div className="element-44" data-responsive-tokens-mode="TV">
-              <div className="overlap-group-11">
-                <div className="div-4">
-                  <ElementsFade className="SKY-fade-7" />
-                </div>
-                <TvMetaDataTiles
-                  className="TV-meta-data-tiles-32"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-34.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-33@2x.png"
-                  fadeClassName="TV-meta-data-tiles-35"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-29@2x.png"
-                  logoPosition="top"
-                  progressBarBrandBarMoveUseClassName="TV-meta-data-tiles-20"
-                  progressBarBrandHeightSmallClassName="TV-meta-data-tiles-19"
-                  progressBarBrandProgressClassName="TV-meta-data-tiles-20"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-34.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-4" />
-              </div>
-            </div>
-            <div className="element-45" data-responsive-tokens-mode="TV">
-              <div className="overlap-group-11">
-                <img className="image-12" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--28.png" />
-                <div className="div-4">
-                  <ElementsFade className="SKY-fade-7" />
-                </div>
-                <TvMetaDataTiles
-                  className="TV-meta-data-tiles-32"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-33.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  fadeClassName="TV-meta-data-tiles-37"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-28@2x.png"
-                  logoPosition="top"
-                  progressBarBrandBarMoveUseClassName="TV-meta-data-tiles-20"
-                  progressBarBrandHeightSmallClassName="TV-meta-data-tiles-19"
-                  progressBarBrandProgressClassName="TV-meta-data-tiles-20"
-                  providerLogoClassName="TV-meta-data-tiles-36"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-33.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-4" />
-              </div>
-            </div>
-            <div className="element-46" data-responsive-tokens-mode="TV">
-              <div className="overlap-group-11">
-                <div className="div-4">
-                  <ElementsFade className="SKY-fade-7" />
-                </div>
-                <TvMetaDataTiles
-                  className="TV-meta-data-tiles-32"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  descriptionClassName="TV-meta-data-tiles-41"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  fadeClassName="TV-meta-data-tiles-39"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  logoPosition="top"
-                  progressBarBrandBarMoveUseClassName="TV-meta-data-tiles-20"
-                  progressBarBrandHeightSmallClassName="TV-meta-data-tiles-19"
-                  progressBarBrandProgressClassName="TV-meta-data-tiles-20"
-                  providerLogoClassName="TV-meta-data-tiles-38"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-                  titleClassName="TV-meta-data-tiles-40"
-                />
-                <div className="dimmer-4" />
-              </div>
-            </div>
-            <TilesTv
-              TVMetaDataTilesDescription="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-              TVMetaDataTilesDescriptionClassName="tiles-16-9-TV-instance"
-              TVMetaDataTilesFade="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-              TVMetaDataTilesFadeClassName="tiles-TV-17"
-              TVMetaDataTilesProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-              TVMetaDataTilesProviderLogoClassName="tiles-TV-16"
-              TVMetaDataTilesTitle="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
-              TVMetaDataTilesTitleClassName="tiles-TV-18"
-              className="tiles-16-9-TV"
-              mode="resting"
-              size="large"
-            />
-          </div>
-        </div>
-        <div className="element-rail-standard">
-          <div className="rail-title-4">Continue watching</div>
-          <div className="tiles-9">
-            <div className="element-47">
-              <div className="overlap-group-14">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-30.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  hasFade={false}
-                  heightSmallWrapperHeightSmallClassName="TV-meta-data-tiles-43"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-25@2x.png"
-                  logoPosition="top"
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-30.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-48">
-              <div className="overlap-11">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-29.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-29@2x.png"
-                  fadeClassName="TV-meta-data-tiles-44"
-                  heightSmallWrapperHeightSmallClassName="TV-meta-data-tiles-43"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-24@2x.png"
-                  logoPosition="top"
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-29.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-49">
-              <div className="overlap-12">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-28.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-28@2x.png"
-                  fadeClassName="TV-meta-data-tiles-45"
-                  heightSmallWrapperHeightSmallClassName="TV-meta-data-tiles-43"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-23@2x.png"
-                  logoPosition="top"
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-28.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-50">
-              <div className="overlap-13">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-27.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-27@2x.png"
-                  fadeClassName="TV-meta-data-tiles-46"
-                  heightSmallWrapperHeightSmallClassName="TV-meta-data-tiles-43"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-22@2x.png"
-                  logoPosition="top"
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-27.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-51">
-              <div className="overlap-14">
-                <img className="image-13" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--21@2x.png" />
-                <div className="SKY-fade-12" />
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-26.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-                  fadeClassName="TV-meta-data-tiles-47"
-                  heightSmallWrapperHeightSmallClassName="TV-meta-data-tiles-43"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-21@2x.png"
-                  logoPosition="top"
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-26.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <ModeRestingSizeWrapper
-              className="element-52"
-              mode="resting"
-              size="standard"
-              sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperDescriptionClassName="element-53"
-              sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperFadeClassName="element-55"
-              sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperProviderLogoClassName="element-56"
-              sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperTitleClassName="element-54"
-            />
-            <ModeRestingSizeWrapper
-              className="element-52"
-              mode="resting"
-              size="standard"
-              sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperDescriptionClassName="element-57"
-              sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperFadeClassName="element-59"
-              sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperProviderLogoClassName="element-60"
-              sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-26@2x.png"
-              sizeTileLogoWrapperTitleClassName="element-58"
-            />
-          </div>
-        </div>
-        <div className="element-rail-standard-2">
-          <div className="rail-title-4">Today’s top picks</div>
-          <div className="tiles-9">
-            <div className="element-61">
-              <div className="overlap-group-15" />
-            </div>
-            <div className="element-62">
-              <div className="overlap-group-15" />
-            </div>
-            <div className="element-63">
-              <div className="overlap-group-15" />
-            </div>
-            <div className="element-64">
-              <div className="overlap-group-15" />
-            </div>
-            <ModeRestingSizeWrapper
-              className="element-66"
-              mode="resting"
-              overlapGroupClassName="element-65"
-              size="standard"
-            />
-            <ModeRestingSizeWrapper
-              className="element-67"
-              mode="resting"
-              size="standard"
-              sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperDescriptionClassName="element-68"
-              sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperFadeClassName="element-70"
-              sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperProviderLogoClassName="element-71"
-              sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperTitleClassName="element-69"
-            />
-            <ModeRestingSizeWrapper
-              className="element-67"
-              mode="resting"
-              size="standard"
-              sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperDescriptionClassName="element-72"
-              sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperFadeClassName="element-74"
-              sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperProviderLogoClassName="element-75"
-              sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/image--13@2x.png"
-              sizeTileLogoWrapperTitleClassName="element-73"
-            />
-          </div>
-        </div>
+        <div id="guide-rail">
         <NowNextRail
           className="now-next-rail-instance"
           focus={false}
@@ -830,164 +548,259 @@ export const BetterLiveGuide = (): JSX.Element => {
           tilesNowNextTileTvMetaDataNowTitleClassNameOverride="now-next-rail-19"
           visible={false}
         />
-        <div className="element-rail-standard-3">
-          <div className="rail-title-4">Recent inputs</div>
-          <div className="tiles-10">
-            <div className="element-76">
-              <div className="overlap-group-16">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-5.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-5@2x.png"
-                  fadeClassName="TV-meta-data-tiles-48"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-5@2x.png"
-                  logoPosition="top"
-                  progressBar={false}
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-5.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-77">
-              <div className="overlap-group-16">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-4.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-4@2x.png"
-                  fadeClassName="TV-meta-data-tiles-49"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-4@2x.png"
-                  logoPosition="top"
-                  progressBar={false}
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-4.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-78">
-              <div className="overlap-group-16">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-3.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-3@2x.png"
-                  fadeClassName="TV-meta-data-tiles-50"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-3@2x.png"
-                  logoPosition="top"
-                  progressBar={false}
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-3.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-79">
-              <div className="overlap-group-16">
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-2.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-2@2x.png"
-                  fadeClassName="TV-meta-data-tiles-51"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-2@2x.png"
-                  logoPosition="top"
-                  progressBar={false}
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-2.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <div className="element-51">
-              <div className="overlap-14">
-                <img className="image-14" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--1@2x.png" />
-                <div className="SKY-fade-13" />
-                <SizeTileLogoWrapper
-                  className="TV-meta-data-tiles-42"
-                  description2="https://c.animaapp.com/pLg7BaBQ/img/description-2.svg"
-                  descriptionClassName="TV-meta-data-tiles-23"
-                  fade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-                  fadeClassName="TV-meta-data-tiles-52"
-                  img="https://c.animaapp.com/pLg7BaBQ/img/provider-logo-1@2x.png"
-                  logoPosition="top"
-                  progressBar={false}
-                  providerLogoClassName="TV-meta-data-tiles-43"
-                  size="tile"
-                  title2="https://c.animaapp.com/pLg7BaBQ/img/title-1.svg"
-                  titleClassName="TV-meta-data-tiles-23"
-                />
-                <BadgeTvDefaultWrapper className="badge-TV-default-6" label="Badge" />
-                <div className="dimmer-7" />
-              </div>
-            </div>
-            <ModeRestingSizeWrapper
-              className="element-80"
-              mode="resting"
-              size="standard"
-              sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-              sizeTileLogoWrapperDescriptionClassName="element-81"
-              sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-              sizeTileLogoWrapperFadeClassName="element-83"
-              sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-              sizeTileLogoWrapperProviderLogoClassName="element-84"
-              sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-              sizeTileLogoWrapperTitleClassName="element-82"
-            />
-          </div>
         </div>
-        <div className="lozenge-rails">
-          <LozengeTvCategory
-            category="My List"
-            focus={false}
-            labelClassName="lozenge-TV-category-2"
-            overlapGroupClassName="lozenge-TV-category-instance"
-          />
-          <LozengeTvCategory
-            category="Search"
-            focus={false}
-            labelClassName="lozenge-TV-category-2"
-            overlapGroupClassName="lozenge-TV-category-3"
-          />
-          <LozengeTvCategory
-            category="TV Shows"
-            focus={false}
-            labelClassName="lozenge-TV-category-2"
-            overlapGroupClassName="lozenge-TV-category-4"
-          />
-          <LozengeTvCategory
-            category="Movies"
-            focus={false}
-            labelClassName="lozenge-TV-category-2"
-            overlapGroupClassName="lozenge-TV-category-5"
-          />
-          <div className="lozenge-TV-category-6">
-            <div className="overlap-15">
-              <BrandGradient
-                className="brand-gradient-instance"
-                img="https://c.animaapp.com/pLg7BaBQ/img/-brand-gradient---2.svg"
-                position="five"
+        <div className="my-rails">
+          { title == "My kid" && <div className="element-rail-standard-3" id="inputs-rail">
+            <div className="rail-title-4">{title}'s Content</div>
+            <div className="tiles-9">
+              {family_program_browse_response_shrunken.menuItems.map((item, index) => (
+                <CustomTileWrapper 
+                  key={index} // Assigning a unique key for each rendered component
+                  title={item.title}
+                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                />
+              ))}
+              <ModeRestingSizeWrapper
+                className="element-80"
+                mode="resting"
+                size="standard"
+                sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperDescriptionClassName="element-81"
+                sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperFadeClassName="element-83"
+                sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperProviderLogoClassName="element-84"
+                sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperTitleClassName="element-82"
               />
-              <div className="label-3">Sports</div>
+            </div>
+          </div>}
+          {title == "Hai" && <div className="element-rail-standard" id="resume-watching-rail">
+            <div className="rail-title-4">{title}'s Content</div>
+            <div className="tiles-9">
+              {theresa_program_browse_response_shrunken.menuItems.map((item, index) => (
+                <CustomTileWrapper 
+                  key={index} // Assigning a unique key for each rendered component
+                  title={item.title}
+                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                />
+              ))}
+              <ModeRestingSizeWrapper
+                className="element-80"
+                mode="resting"
+                size="standard"
+                sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperDescriptionClassName="element-81"
+                sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperFadeClassName="element-83"
+                sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperProviderLogoClassName="element-84"
+                sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperTitleClassName="element-82"
+              />
+            </div>
+          </div>}
+          {title == "Kevin" && <div className="element-rail-standard-2" id="recs-rail">
+            <div className="rail-title-4">{title}'s Content</div>
+            <div className="tiles-9">
+              {gru_program_browse_response_shrunken.menuItems.map((item, index) => (
+                <CustomTileWrapper 
+                  key={index} // Assigning a unique key for each rendered component
+                  title={item.title}
+                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                />
+              ))}
+              <ModeRestingSizeWrapper
+                className="element-80"
+                mode="resting"
+                size="standard"
+                sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperDescriptionClassName="element-81"
+                sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperFadeClassName="element-83"
+                sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperProviderLogoClassName="element-84"
+                sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperTitleClassName="element-82"
+              />
+            </div>
+          </div>}
+          {title == "Kevin and Hai" && <div className="element-rail-standard-2" id="recs-rail">
+            <div className="rail-title-4">{title}'s Content</div>
+            <div className="tiles-9">
+            {theresa_and_gru_program_browse_response_shrunken.menuItems.map((item, index) => (
+              <CustomTileWrapper 
+                key={index} // Assigning a unique key for each rendered component
+                title={item.title}
+                backgroundImage={`url(${item['Provider Poster Art']})`} 
+              />
+            ))}
+              <ModeRestingSizeWrapper
+                className="element-80"
+                mode="resting"
+                size="standard"
+                sizeTileLogoWrapperDescription="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperDescriptionClassName="element-81"
+                sizeTileLogoWrapperFade="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperFadeClassName="element-83"
+                sizeTileLogoWrapperProviderLogo="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperProviderLogoClassName="element-84"
+                sizeTileLogoWrapperTitle="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
+                sizeTileLogoWrapperTitleClassName="element-82"
+              />
+            </div>
+          </div>}
+          <div className="element-rail" id="movies-rail">
+          <p className="rail-title-4">New movies to rent or buy</p>
+          <div className="tiles-5">
+            <VariantUnfocusedWrapper className="tiles-3-4-TV" variant="unfocused" />
+            <div className="tiles-TV-2">
+              <div className="dimmer-wrapper">
+                <Dimmer className="dimmer-5" />
+              </div>
+            </div>
+            <div className="tiles-TV-3">
+              <div className="dimmer-instance-wrapper">
+                <Dimmer className="dimmer-5" />
+              </div>
+            </div>
+            <VariantUnfocusedWrapper className="tiles-TV-instance" variant="unfocused" />
+            <VariantUnfocusedWrapper className="tiles-3-4-TV-instance" variant="unfocused" />
+            <VariantUnfocusedWrapper className="tiles-TV-4" variant="unfocused" />
+            <div className="tiles-TV-5">
+              <div className="overlap-group-12">
+                <img className="image-10" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--43@2x.png" />
+                <Dimmer className="dimmer-6" />
+              </div>
+            </div>
+            <VariantUnfocusedWrapper className="tiles-TV-6" variant="unfocused" />
+            <VariantUnfocusedWrapper className="tiles-TV-7" variant="unfocused" />
+          </div>
+          </div>
+          <div className="hero-switcher-TV" id="large-recommendation">
+            <div className="overlap-10">
+              <HeroImage
+                mask="three-content-block"
+                maskContentBlock="https://c.animaapp.com/pLg7BaBQ/img/image-mask-options.svg"
+                maskTileFadeClassName="image-mask-options"
+              />
+              <TitleArt className="title-art-2" />
+              <div className="synopsis">
+                <ProviderLogo className="design-component-instance-node-2" />
+                <div className="title-6">Succession</div>
+                <div className="meta-buttons">
+                  <div className="frame-3">
+                    <MetaSynopsis
+                      className="design-component-instance-node-7"
+                      masterMetaSynopsisAccessibilityBadgeClassName="design-component-instance-node-6"
+                      masterMetaSynopsisAccessibilityBadgeClassNameOverride="design-component-instance-node-6"
+                      masterMetaSynopsisAgeRatingClassName="design-component-instance-node-6"
+                      masterMetaSynopsisDurationClassName="meta-synopsis-instance"
+                      masterMetaSynopsisEpisode={false}
+                      masterMetaSynopsisStatusDivClassName="meta-synopsis-2"
+                      masterMetaSynopsisStatusIcon={<MyList className="my-list-2" />}
+                      masterMetaSynopsisStatusText="Series Added"
+                      masterMetaSynopsisVideoQualityClassName="design-component-instance-node-6"
+                      type="catch-up"
+                    />
+                    <p className="synopsis-2">
+                      Don’t miss the award-winning, provocative, funny series about a highly dysfunctional dynasty.
+                    </p>
+                  </div>
+                  <ButtonRail
+                    buttonMasterButtonFocusMasterButtonText="Watch"
+                    buttonMasterButtonFocusMasterButtonTextClassName="design-component-instance-node-6"
+                    className="design-component-instance-node-7"
+                    focus="unfocused"
+                    scrolled={false}
+                    visible={false}
+                    visible1={false}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="lozenge-TV-category-6">
-            <BrandGradient
-              className="brand-gradient-2"
-              position="six"
-              position1="https://c.animaapp.com/pLg7BaBQ/img/fade-1@2x.png"
-            />
-            <div className="label-4">Category</div>
+          <div className="element-rail-2" id="tv-rail">
+            <div className="rail-title-4">Trending TV</div>
+            <div className="tiles-6">
+              <VariantUnfocusedWrapper className="tiles-TV-8" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-9" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-10" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-11" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-12" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-13" variant="unfocused" />
+              <div className="tiles-TV-5">
+                <div className="overlap-group-12">
+                  <img className="image-11" alt="Image" src="https://c.animaapp.com/pLg7BaBQ/img/image--34@2x.png" />
+                  <Dimmer className="dimmer-6" />
+                </div>
+              </div>
+              <VariantUnfocusedWrapper className="tiles-TV-14" variant="unfocused" />
+              <VariantUnfocusedWrapper className="tiles-TV-15" variant="unfocused" />
+            </div>
+          </div>
+          <div className="billboard" id="large-recommendation-2">
+            <div className="tiles-7">
+              <TileBillboard
+                className="tile-billboard-instance"
+                focus="unfocused"
+                focusUnfocusedWrapperMasterBillboardMasterBillboardClassName="element-39"
+                focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisEpisodeClassName="element-38"
+                focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusDivClassName="element-38"
+                focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusIcon={
+                  <MyList3 className="my-list-2" />
+                }
+                focusUnfocusedWrapperMasterBillboardMetaTilesMetaSynopsisMasterMetaSynopsisStatusText="Series Added"
+                focusUnfocusedWrapperMasterBillboardMetaTilesProgrammeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/programme-title-2.svg"
+                focusUnfocusedWrapperMasterBillboardMetaTilesProviderLogoProviderLogoClassName="design-component-instance-node-2"
+                focusUnfocusedWrapperMasterBillboardOverlapGroupClassName="element-40"
+              />
+              <div className="master-billboard-wrapper">
+                <div className="master-billboard-2">
+                  <div className="overlap-9">
+                    <div className="master-billboard-3">
+                      <div className="overlap-group-13">
+                        <img
+                          className="hero-masked"
+                          alt="Hero masked"
+                          src="https://c.animaapp.com/pLg7BaBQ/img/hero-masked-1.svg"
+                        />
+                        <TitleArt className="title-art-instance" />
+                        <MetaTiles
+                          className="meta-tiles-3"
+                          focus="unfocused"
+                          metaSynopsisMasterMetaSynopsisEpisodeClassName="design-component-instance-node-4"
+                          metaSynopsisMasterMetaSynopsisStatusDivClassName="design-component-instance-node-5"
+                          metaSynopsisMasterMetaSynopsisStatusText="Added"
+                          metaSynopsisTypeMovieClassName="design-component-instance-node-3"
+                          programmeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/programme-title-1.svg"
+                          providerLogoProviderLogoClassName="meta-tiles-4"
+                          type="billboard"
+                        />
+                      </div>
+                    </div>
+                    <ElementsDimmer className="elements-dimmer-2" />
+                  </div>
+                </div>
+              </div>
+              <div className="element-41">
+                <div className="master-billboard-2">
+                  <MasterBillboard
+                    className="master-billboard-tile-instance"
+                    metaTilesMetaSynopsisMasterMetaSynopsisEpisodeClassName="design-component-instance-node-4"
+                    metaTilesMetaSynopsisMasterMetaSynopsisStatusDivClassName="design-component-instance-node-5"
+                    metaTilesMetaSynopsisMasterMetaSynopsisStatusText="Added"
+                    metaTilesMetaSynopsisTypeMovieClassName="design-component-instance-node-3"
+                    metaTilesProgrammeTitleProgrammeTitle="https://c.animaapp.com/pLg7BaBQ/img/image--170@2x.png"
+                    metaTilesProgrammeTitleProgrammeTitleClassName="master-billboard-instance"
+                    metaTilesProviderLogoProviderLogoClassName="master-billboard-6"
+                    metaTilesTypeMinimisedFocusClassName="master-billboard-5"
+                    overlapGroupClassName="master-billboard-4"
+                  />
+                  <ElementsDimmer className="elements-dimmer-2" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

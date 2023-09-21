@@ -648,7 +648,7 @@
   width: 125px !important;
 }
 
-.better-live-guide .element-rail {
+/* .better-live-guide .element-rail {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -659,7 +659,7 @@
   position: absolute;
   top: 2869px;
   width: 1824px;
-}
+} */
 
 .better-live-guide .rail-title-4 {
   box-shadow: var(--text-drop-shadow);
@@ -799,7 +799,7 @@
   z-index: 0 !important;
 }
 
-.better-live-guide .element-rail-2 {
+/* .better-live-guide .element-rail-2 {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -810,7 +810,7 @@
   position: absolute;
   top: 4479px;
   width: 1768px;
-}
+} */
 
 .better-live-guide .tiles-6 {
   align-items: center;
@@ -1100,14 +1100,14 @@
   position: relative !important;
 }
 
-.better-live-guide .hero-switcher-TV {
+/* .better-live-guide .hero-switcher-TV {
   background-color: #000000;
   height: 1080px;
   left: -1px;
   position: absolute;
   top: 3293px;
   width: 1920px;
-}
+} */
 
 .better-live-guide .overlap-10 {
   height: 1080px;
@@ -1407,19 +1407,6 @@
   width: unset !important;
 }
 
-.better-live-guide .element-rail-standard {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: var(--responsive-tokens-spacer-md);
-  height: 217px;
-  justify-content: flex-end;
-  left: 78px;
-  position: absolute;
-  top: 2179px;
-  width: 1765px;
-}
-
 .better-live-guide .tiles-9 {
   align-items: center;
   display: inline-flex;
@@ -1427,6 +1414,14 @@
   gap: var(--responsive-tokens-spacer-lg);
   margin-right: -1081px;
   position: relative;
+  overflow-x: auto;
+  width: 105%;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.tiles-9::-webkit-scrollbar {
+  display: none;
 }
 
 .better-live-guide .element-47 {
@@ -1670,19 +1665,6 @@
   margin-left: -11162px !important;
   margin-top: -635px !important;
   width: 100% !important;
-}
-
-.better-live-guide .element-rail-standard-2 {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: var(--responsive-tokens-spacer-md);
-  height: 217px;
-  justify-content: flex-end;
-  left: 78px;
-  position: absolute;
-  top: 2524px;
-  width: 1765px;
 }
 
 .better-live-guide .element-61 {
@@ -1931,26 +1913,21 @@
   width: unset !important;
 }
 
-.better-live-guide .element-rail-standard-3 {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: var(--responsive-tokens-spacer-md);
-  height: 217px;
-  justify-content: flex-end;
-  left: 78px;
-  position: absolute;
-  top: 1837px;
-  width: 1765px;
-}
-
 .better-live-guide .tiles-10 {
   align-items: center;
   display: inline-flex;
   flex: 0 0 auto;
   gap: var(--responsive-tokens-spacer-lg);
-  margin-right: -671px;
+  margin-right: -1081px;
   position: relative;
+  overflow-x: auto;
+  width: 105%;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.tiles-10::-webkit-scrollbar {
+  display: none;
 }
 
 .better-live-guide .element-76 {
@@ -2195,4 +2172,77 @@
   text-align: center;
   top: 47px;
   width: 354px;
+}
+
+.my-rails {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 1837px;
+  left: 78px;
+}
+
+.better-live-guide .element-rail-standard-2,
+.better-live-guide .element-rail-standard-3,
+.better-live-guide .element-rail-standard,
+.better-live-guide .element-rail,
+.better-live-guide .hero-switcher-TV,
+.better-live-guide .element-rail-2{
+  margin-bottom: 100px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--responsive-tokens-spacer-md);
+  height: 217px;
+  justify-content: flex-end;
+  /* Remove these lines */
+  /* position: absolute; */
+  /* left: 78px; */
+  /* top: some_value; */
+  width: 1765px;
+}
+
+.better-live-guide .element-rail {
+  margin-top: 100px !important;
+}
+
+.better-live-guide .element-rail-2 {
+  margin-top: 900px !important;
+}
+
+.better-live-guide .profile {
+  z-index: 100;
+  position: fixed;
+  right: 500px;
+  display: flex;  /* Changed from inline-flex to flex */
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.373);  /* Set background to white */
+  padding: 10px;  /* Added padding for better visuals */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Optional, but adds depth */
+  /* Remove position: fixed, left, and top if they are not necessary */
+}
+
+.better-live-guide .first-profile,
+.better-live-guide .second-profile,
+.better-live-guide .third-profile {
+  color: #f1f1f1;
+  font-family: var(--global-time-font-family);
+  font-size: var(--global-time-font-size);
+  font-style: var(--global-time-font-style);
+  font-weight: var(--global-time-font-weight);
+  letter-spacing: var(--global-time-letter-spacing);
+  line-height: var(--global-time-line-height);
+  margin-top: -1px;
+  text-align: right;
+  text-shadow: 1px 2px 0px #000000cc;
+  white-space: nowrap;
+  width: fit-content;
+  /* Removed the left: -350px */
+}
+
+.resized-image {
+  width: 130px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
 }

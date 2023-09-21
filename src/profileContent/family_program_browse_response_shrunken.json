@@ -1,0 +1,67 @@
+{
+  "entryCount":10,
+  "sessionId":"comcast:compass:session:8392814886702435138",
+  "discoveryId":"browse-2.94.0-10.42.63.131-7-566-1695311456",
+  "menuItems":[
+    {
+      "programId":"comcast:compass:program:5023876205481124112",
+      "title":"Avengers: Infinity War",
+      "synopsis":"Iron Man, Thor and the rest of the Avengers battle their most powerful enemy yet -- the evil Thanos.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:8504266329101600112",
+      "title":"Dungeons & Dragons: Honor Among Thieves",
+      "synopsis":"A charming thief and a band of unlikely adventurers undertake an epic heist to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people in this hilarious and action-packed adventure.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:8913644640955673112",
+      "title":"Shazam!",
+      "synopsis":"A 14-year-old transforms into the adult superhero Shazam and battles the evil Dr. Thaddeus Sivana.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:5871751853649065112",
+      "title":"Shazam! Fury of the Gods",
+      "synopsis":"Shazam and his allies must save the world from a vengeful trio of ancient gods.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:8013351950647889112",
+      "title":"Jane",
+      "synopsis":"Nine-year-old environmentalist Jane embarks on a quest to save endangered animals.",
+      "programType":"SeriesMaster"
+    },
+    {
+      "programId":"comcast:compass:program:5992010106256768112",
+      "title":"Ant-Man",
+      "synopsis":"Ant-Man must prevent Yellowjacket from perfecting his shrinking technology as a weapon for evil.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:4688009015568051112",
+      "title":"Ant-Man and The Wasp",
+      "synopsis":"Ant-Man and the Wasp uncover secrets from the past while battling a powerful new enemy.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:8691433446155382112",
+      "title":"Ant-Man and the Wasp: Quantumania",
+      "synopsis":"Ant-Man and the Wasp embark on a mind-bending adventure in the Quantum Realm.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:7824451397070926112",
+      "title":"Spider-Man 2",
+      "synopsis":"Peter Parker (Tobey Maguire) fights a man who has mechanical tentacles.",
+      "programType":"Movie"
+    },
+    {
+      "programId":"comcast:compass:program:7963491135672618112",
+      "title":"Spider-Man: Across the Spider-Verse",
+      "synopsis":"Brooklyn's friendly neighborhood Spider-Man encounters a team of Spider-People in the Multiverse.",
+      "programType":"Movie"
+    }
+  ]
+}
