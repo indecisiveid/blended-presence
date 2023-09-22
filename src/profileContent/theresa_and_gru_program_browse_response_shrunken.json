@@ -1,115 +1,131 @@
 {
-   "entryCount":18,
-   "sessionId":"comcast:compass:session:964699846299466124",
-   "discoveryId":"browse-2.94.0-10.42.36.30-7-613-1695318293",
-   "menuItems":[
-      {
-         "programId":"comcast:compass:program:6506353099074158112",
-         "title":"9-1-1",
-         "synopsis":"The lives and careers of emergency response providers who put their lives at risk to save others in the most frightening, shocking and heart-stopping situations.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8124453965323078112",
-         "title":"Kelce",
-         "synopsis":"Philadelphia Eagles team captain and All-Pro center Jason Kelce's 2022-23 season.",
-         "programType":"Other"
-      },
-      {
-         "programId":"comcast:compass:program:7695804312293897112",
-         "title":"Crime Scene Kitchen",
-         "synopsis":"Bakers must decode what type of dessert was made using just crumbs and a few elusive clues.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:5191720111929016112",
-         "title":"Grey's Anatomy",
-         "synopsis":"A team of doctors at Grey Sloan Memorial are faced with life-or-death decisions on a daily basis; together they discover that neither medicine nor relationships can be defined in black and white.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8835613776383684112",
-         "title":"Hard Knocks in Season: The Arizona Cardinals",
-         "synopsis":"Following the Cardinals as they navigate the challenges of an NFL season and battle for a playoff berth.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:6140554949066283112",
-         "title":"Holiday Baking Championship",
-         "synopsis":"Amateur bakers show off family traditions and superb skills to be crowned Holiday Baking Champion.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8940569100689298112",
-         "title":"Holiday Baking Championship: Gingerbread Showdown",
-         "synopsis":"Jesse Palmer hosts a gingerbread-themed Holiday Baking Championship where three teams of gingerbreaders and baking assistants take on all-encompassing gingerbread builds based on a theme.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:5239543706113867112",
-         "title":"Jersey Shore Family Vacation",
-         "synopsis":"The original Jersey Shore housemates relive their glory days while on vacation.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:7318247802770044112",
-         "title":"Secret Invasion",
-         "synopsis":"Nick Fury learns of a secret invasion of Earth by a faction of shapeshifting Skrulls.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:4963584231659561112",
-         "title":"Superman & Lois",
-         "synopsis":"Clark Kent and Lois Lane face their greatest challenge -- being working parents in today's society.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8904659381700616112",
-         "title":"The Bear",
-         "synopsis":"As Carmy fights to transform the family sandwich shop and himself, he works alongside a rough-around-the-edges crew that ultimately reveals itself as his chosen family.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:7944563142028756112",
-         "title":"The Great Brady Heist",
-         "synopsis":"Chronicling the disappearance of Tom Brady's jersey following Super Bowl LI.",
-         "programType":"Other"
-      },
-      {
-         "programId":"comcast:compass:program:7477794345307535112",
-         "title":"The Last of Us",
-         "synopsis":"Joel and Ellie must survive ruthless killers and monsters on a trek across America after an outbreak.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8849755556912735112",
-         "title":"The Masked Singer",
-         "synopsis":"A top-secret singing competition in which celebrities face off against each other and appear in elaborate costumes with full facemasks to conceal their identities.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:7788828429848251112",
-         "title":"The Menu",
-         "synopsis":"Shocking surprises await a couple when they travel to an island to sample a chef's lavish menu.",
-         "programType":"Movie"
-      },
-      {
-         "programId":"comcast:compass:program:7190072851208537112",
-         "title":"The Walking Dead",
-         "synopsis":"In the years following a zombie apocalypse, survivors seek refuge in a world overrun by the dead.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:8486670285273145112",
-         "title":"The White Lotus",
-         "synopsis":"The exploits of various guests and employees at a tropical resort over the span of a week.",
-         "programType":"SeriesMaster"
-      },
-      {
-         "programId":"comcast:compass:program:7535133008773329112",
-         "title":"Twisted Metal",
-         "synopsis":"A motormouthed outsider with no memory of his past gets a chance at a better life if he can deliver a package across a post-apocalyptic wasteland.",
-         "programType":"SeriesMaster"
-      }
-   ]
+    "entryCount": 18,
+    "sessionId": "comcast:compass:session:964699846299466124",
+    "discoveryId": "browse-2.94.0-10.42.36.30-7-613-1695318293",
+    "menuItems": [
+        {
+            "programId": "comcast:compass:program:6506353099074158112",
+            "title": "9-1-1",
+            "synopsis": "The lives and careers of emergency response providers who put their lives at risk to save others in the most frightening, shocking and heart-stopping situations.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p14154513_bd_h8_ag.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8124453965323078112",
+            "title": "Kelce",
+            "synopsis": "Philadelphia Eagles team captain and All-Pro center Jason Kelce's 2022-23 season.",
+            "programType": "Other"
+        },
+        {
+            "programId": "comcast:compass:program:7695804312293897112",
+            "title": "Crime Scene Kitchen",
+            "synopsis": "Bakers must decode what type of dessert was made using just crumbs and a few elusive clues.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p19780911_bd_h8_ac.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:5191720111929016112",
+            "title": "Grey's Anatomy",
+            "synopsis": "A team of doctors at Grey Sloan Memorial are faced with life-or-death decisions on a daily basis; together they discover that neither medicine nor relationships can be defined in black and white.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p185019_bd_h8_aj.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8835613776383684112",
+            "title": "Hard Knocks in Season: The Arizona Cardinals",
+            "synopsis": "Following the Cardinals as they navigate the challenges of an NFL season and battle for a playoff berth.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p22952246_bd_h8_aa.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:6140554949066283112",
+            "title": "Holiday Baking Championship",
+            "synopsis": "Amateur bakers show off family traditions and superb skills to be crowned Holiday Baking Champion.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p11107346_bd_h8_ad.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8940569100689298112",
+            "title": "Holiday Baking Championship: Gingerbread Showdown",
+            "synopsis": "Jesse Palmer hosts a gingerbread-themed Holiday Baking Championship where three teams of gingerbreaders and baking assistants take on all-encompassing gingerbread builds based on a theme.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p20916074_bd_h8_ab.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:5239543706113867112",
+            "title": "Jersey Shore Family Vacation",
+            "synopsis": "The original Jersey Shore housemates relive their glory days while on vacation.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p15207885_bd_h8_ai.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:7318247802770044112",
+            "title": "Secret Invasion",
+            "synopsis": "Nick Fury learns of a secret invasion of Earth by a faction of shapeshifting Skrulls.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://edge.myriad-store-prod.top.comcast.net/myriad/chaz2/DISNEY_PLUS/2023-Aug/9CsQdEIeB8CdOJu39m5.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:4963584231659561112",
+            "title": "Superman & Lois",
+            "synopsis": "Clark Kent and Lois Lane face their greatest challenge -- being working parents in today's society.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p18320269_bd_h8_ac.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8904659381700616112",
+            "title": "The Bear",
+            "synopsis": "As Carmy fights to transform the family sandwich shop and himself, he works alongside a rough-around-the-edges crew that ultimately reveals itself as his chosen family.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p22067809_bd_h8_ab.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:7944563142028756112",
+            "title": "The Great Brady Heist",
+            "synopsis": "Chronicling the disappearance of Tom Brady's jersey following Super Bowl LI.",
+            "programType": "Other"
+        },
+        {
+            "programId": "comcast:compass:program:7477794345307535112",
+            "title": "The Last of Us",
+            "synopsis": "Joel and Ellie must survive ruthless killers and monsters on a trek across America after an outbreak.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p22672667_bd_h8_aa.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8849755556912735112",
+            "title": "The Masked Singer",
+            "synopsis": "A top-secret singing competition in which celebrities face off against each other and appear in elaborate costumes with full facemasks to conceal their identities.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p15803596_bd_h8_ai.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:7788828429848251112",
+            "title": "The Menu",
+            "synopsis": "Shocking surprises await a couple when they travel to an island to sample a chef's lavish menu.",
+            "programType": "Movie",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p22080192_p_v13_ad.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:7190072851208537112",
+            "title": "The Walking Dead",
+            "synopsis": "In the years following a zombie apocalypse, survivors seek refuge in a world overrun by the dead.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p8282918_bd_h8_ah.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:8486670285273145112",
+            "title": "The White Lotus",
+            "synopsis": "The exploits of various guests and employees at a tropical resort over the span of a week.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://coph.tmsimg.com/assets/p19964679_bd_h8_ab.jpg"
+        },
+        {
+            "programId": "comcast:compass:program:7535133008773329112",
+            "title": "Twisted Metal",
+            "synopsis": "A motormouthed outsider with no memory of his past gets a chance at a better life if he can deliver a package across a post-apocalyptic wasteland.",
+            "programType": "SeriesMaster",
+            "Provider Poster Art": "http://edge.myriad-store-prod.top.comcast.net/myriad/chaz2/THIRD_PARTY/2023-Jul/nbc-nbcott-b077a264-7d29-3350-a443-98d0af78e662-3987322.jpeg"
+        }
+    ]
 }

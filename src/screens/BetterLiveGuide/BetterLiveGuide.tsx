@@ -557,7 +557,7 @@ export const BetterLiveGuide = (): JSX.Element => {
                 <CustomTileWrapper 
                   key={index} // Assigning a unique key for each rendered component
                   title={item.title}
-                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                  backgroundImage={`url(${item['Provider Poster Art']})`}
                 />
               ))}
               <ModeRestingSizeWrapper
@@ -582,7 +582,7 @@ export const BetterLiveGuide = (): JSX.Element => {
                 <CustomTileWrapper 
                   key={index} // Assigning a unique key for each rendered component
                   title={item.title}
-                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                  backgroundImage={`url(${item['Provider Poster Art']})`}
                 />
               ))}
               <ModeRestingSizeWrapper
@@ -607,7 +607,7 @@ export const BetterLiveGuide = (): JSX.Element => {
                 <CustomTileWrapper 
                   key={index} // Assigning a unique key for each rendered component
                   title={item.title}
-                  backgroundImage={`url(${item['Provider Poster Art']})`} 
+                  backgroundImage={`url(${item['Provider Poster Art']})`}
                 />
               ))}
               <ModeRestingSizeWrapper
@@ -632,7 +632,7 @@ export const BetterLiveGuide = (): JSX.Element => {
               <CustomTileWrapper 
                 key={index} // Assigning a unique key for each rendered component
                 title={item.title}
-                backgroundImage={`url(${item['Provider Poster Art']})`} 
+                backgroundImage={`url(${item['Provider Poster Art']})`}
               />
             ))}
               <ModeRestingSizeWrapper
